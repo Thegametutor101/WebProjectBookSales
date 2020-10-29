@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3705c003-8ff2-443e-9a69-edc5f34c7954" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Entity/EntityBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityBooks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Entity/EntityUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityUsers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Model/ModelBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Model/ModelUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Model/ModelUsers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/addBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/addUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/addUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityBooks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/loadBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/loadBooks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/addUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/Pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/loadBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/loadBooks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/css/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +41,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DBE.Init.BalloonShown" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -75,7 +71,7 @@
       <workItem from="1603734102674" duration="3042000" />
       <workItem from="1603738667525" duration="4471000" />
       <workItem from="1603904659569" duration="7210000" />
-      <workItem from="1603992352959" duration="4203000" />
+      <workItem from="1603992352959" duration="11133000" />
     </task>
     <servers />
   </component>
@@ -90,22 +86,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="194" y="254" key="#SQL_Dialects/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1603740173778" />
-    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603740201651">
+    <state x="206" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603999953856">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1603740201651" />
+    <state x="206" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1603999953856" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1603905008844">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1603905008844" />
-    <state x="549" y="135" key="NewPhpClassDialog" timestamp="1603390585590">
+    <state x="549" y="135" key="NewPhpClassDialog" timestamp="1604001452527">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="135" key="NewPhpClassDialog/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1603390585590" />
-    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1603909501125">
+    <state x="549" y="135" key="NewPhpClassDialog/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1604001452527" />
+    <state x="604" y="336" key="NewPhpFileDialog" timestamp="1604001333853">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1603909501125" />
+    <state x="604" y="336" key="NewPhpFileDialog/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1604001333853" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1603905049968">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
