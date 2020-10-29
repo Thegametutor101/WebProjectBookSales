@@ -1,5 +1,5 @@
 <?php
-echo json_encode("test");
+echo "<script>console.log('test')</script>";
 $lines = array();
 try
 {
