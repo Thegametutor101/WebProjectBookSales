@@ -1,6 +1,6 @@
 @font-face {
     font-family: customFont;
-    src: url("../font/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+    src: url("../font/IM_Fell_Great_Primer_SC/IMFellGreatPrimerSC-Regular.ttf");
   }
   
   *{
@@ -11,30 +11,48 @@
     width: 1000px;
     display: flex;
     flex-direction: column;
+    background-image: url("../picture/main_background.png");
+    text-align: center;
+    min-height: 100vh;
+    height: 100%;
+    min-width: 100%;
+    background-size: cover;
+    
+    align-content: center;
 }
 .header {
     width: 100%;
-    background-color: lightskyblue;
-    margin: 0;
+    background-image: url("../picture/header.png");
+    margin:25px;
+    width: 95%;
+    color: white;
+    border: 2px solid #2e2e2e;
+    text-align: left;
+    align-content: left;
+    justify-content: center;
 }
+
+
 button {
-    background-color: lightskyblue;
+    background-color: #2e2e2e;
     border: none;
     margin-right: 2px;
     color: white;
-    padding: 17px 32px;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     border-radius: 12px;
+    padding: 15PX;
 }
+
+
+
 button:hover {
-    background-color: #32a1e7;
+    background-color:#d9b85f;
     color: white;
 }
 button:active {
-    background-color: #2486c4;
+    background-color: #e6c56c;
     color: white;
 }
 .dropbtn {
