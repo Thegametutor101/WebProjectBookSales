@@ -2,7 +2,7 @@
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3308
+-- Host: 206.167.140.56:8008
 -- Generation Time: Oct 26, 2020 at 08:11 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
@@ -19,26 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `booksales`
+-- Database: `420505ri_gr06`
 --
-
-DELIMITER $$
---
--- Functions
---
-DROP FUNCTION IF EXISTS `initcap`$$
-CREATE DEFINER=`root`@`localhost` FUNCTION `initcap` (`x` VARCHAR(100)) RETURNS VARCHAR(100) CHARSET utf8 BEGIN
-SET @str='';
-SET @l_str='';
-WHILE x REGEXP ' ' DO
-SELECT SUBSTRING_INDEX(x, ' ', 1) INTO @l_str;
-SELECT SUBSTRING(x, LOCATE(' ', x)+1) INTO x;
-SELECT CONCAT(@str, ' ', CONCAT(UPPER(SUBSTRING(@l_str,1,1)),LOWER(SUBSTRING(@l_str,2)))) INTO @str;
-END WHILE;
-RETURN LTRIM(CONCAT(@str, ' ', CONCAT(UPPER(SUBSTRING(x,1,1)),LOWER(SUBSTRING(x,2)))));
-END$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 

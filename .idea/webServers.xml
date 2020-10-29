@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7fbd6d69-9c32-442d-a7cb-ac15605674e6" name="206.167.140.56" url="http://206.167.140.56:8080/Equipe_6">
+        <fileTransfer rootFolder="/Cours/A2020/420505RI/Equipe_6" host="206.167.140.56" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
