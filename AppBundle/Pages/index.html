@@ -10,6 +10,7 @@
 <body>
 <div class="main">
     <div class="header"></div>
+    
     <div class="container"></div>
 </div>
 </body>
@@ -67,39 +68,7 @@ $(document).ready(function () {
         let body=data.replace(/^.*?<body>(.*?)<\/body>.*?$/s,"$1");
         $(".header").html(body);
     });
-    // $.ajax({
-    //     url:"../Management/loadBooks.php",    //the page containing php script
-    //     type: "post",    //request type,
-    //     dataType: 'json',
-    //     success:function(result){
-    //         // $(".container").html(result['cards'])
-    //         console.log("ok");
-    //         // foreach($lines as $l)
-    //         // {
-    //         //     if ($l[5] === '1') {
-    //         //         $cards .= "<div class='card'>
-    //         //             <div class='top'>
-    //         //             <div class='leftSide'>
-    //         //             <div class='material-icons bookPicture'>image</div>
-    //         //     </div>
-    //         //     <div class='rightSide'>
-    //         //     <div class='id' style='padding-bottom: 15px;vertical-align: top'>#$l[0]</div>
-    //         //     <div class='title' style='padding-bottom: 3px'>titre: $l[1]</div>
-    //         //     <div class='author' style='padding-bottom: 15px'>auteur: $l[2]</div>
-    //         //     <div class='category' style='padding-bottom: 3px; vertical-align: bottom'>$l[3]</div>
-    //         //     </div>
-    //         //     </div>
-    //         //     <div class='bottom'>
-    //         //     <div class='price'>$l[6]$</div>
-    //         //     </div>
-    //         //     </div>";
-    //         //     }
-    //         //     }
-    //     },
-    //     error:function (result, er) {
-    //         console.log("no");
-    //     }
-    // });
+   
     $.ajax({
         url: "../Management/loadBooks.php",
         type: "POST",

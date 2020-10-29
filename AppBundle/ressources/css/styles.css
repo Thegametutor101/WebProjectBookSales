@@ -124,3 +124,12 @@ button:active {
 .tableButtonDelete .tableButtonModify {
     padding: 5px 15px;
 }
+
+
+.container_page{
+    margin: 20px;
+    background-color: #4a4a4a;
+    color: white;
+    justify-content: center;
+    text-align: center;
+}
