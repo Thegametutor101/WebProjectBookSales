@@ -11,25 +11,14 @@
     width: 1000px;
     display: flex;
     flex-direction: column;
-    background-image: url("../picture/main_background.png");
-    text-align: center;
-    min-height: 100vh;
-    height: 100%;
-    min-width: 100%;
-    background-size: cover;
-    
-    align-content: center;
 }
 .header {
     width: 100%;
-    background-image: url("../picture/header.png");
-    margin:25px;
-    width: 95%;
-    color: white;
-    border: 2px solid #2e2e2e;
+    background-color: lightskyblue;
+    margin: 0;
 }
 button {
-    background-color: #4a4a4a;
+    background-color: lightskyblue;
     border: none;
     margin-right: 2px;
     color: white;
@@ -40,15 +29,12 @@ button {
     font-size: 16px;
     border-radius: 12px;
 }
-
-
-
 button:hover {
-    background-color:#d9b85f;
+    background-color: #32a1e7;
     color: white;
 }
 button:active {
-    background-color: #e6c56c;
+    background-color: #2486c4;
     color: white;
 }
 .dropbtn {
