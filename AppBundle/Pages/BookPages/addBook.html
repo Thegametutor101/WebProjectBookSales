@@ -6,12 +6,6 @@
     <link rel="stylesheet" type="text/css" href="../../ressources/css/styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        $.get("../header.html", function( data ) {
-            let body=data.replace(/^.*?<body>(.*?)<\/body>.*?$/s,"$1");
-            $(".header").html(body);
-        });
-    </script>
 </head>
 <body>
 <div class="main">
@@ -19,4 +13,14 @@
 </div>
 </body>
 <script src="../../ressources/javascript/scripts.js"></script>
+<script>
+$(document).ready(function () {
+    $.get("../header.html", function (data) {
+        let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
+        $(".header").html(body);
+        $(".pageName").text("Ajout de Livre");
+        headerListener();
+    });
+});
+</script>
 </html>

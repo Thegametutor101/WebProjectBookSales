@@ -46,6 +46,10 @@
         font-size: 25px;
         color: #ff7878;
     }
+    .id {
+        font-size: 13px;
+        text-align: right;
+    }
     .leftSide {
         width: 40%;
     }
@@ -67,6 +71,8 @@ $(document).ready(function () {
     $.get("header.html", function( data ) {
         let body=data.replace(/^.*?<body>(.*?)<\/body>.*?$/s,"$1");
         $(".header").html(body);
+        $(".pageName").text("Acceuil");
+        headerListener();
     });
     $.ajax({
         url: "../Management/loadBooks.php",
@@ -74,10 +80,8 @@ $(document).ready(function () {
         dataType: "json",
         success: function(result){
             console.log("downloading book list: success");
-            // console.log(result["lines"]);
             let list = result["lines"];
             for (i = 0; i < list.length; i++) {
-                console.log(list[i]);
                 if (list[i][5] === "1") {
                     $(".container").append(
                         "<div class='card'>" +
@@ -86,8 +90,8 @@ $(document).ready(function () {
                                     "<div class='material-icons bookPicture'>image</div>" +
                                 "</div>" +
                                 "<div class='rightSide'>" +
-                                    "<div class='id' style='padding-bottom: 15px;vertical-align: top'>#" + list[i][0] + "</div>" +
-                                    "<div class='title' style='padding-bottom: 3px'>titre: " + list[i][1] + "</div>" +
+                                    "<div class='id' style=';vertical-align: top'>#" + list[i][0] + "</div><hr>" +
+                                    "<div class='title' style='padding-bottom: 3px;padding-top: 15px'>titre: " + list[i][1] + "</div>" +
                                     "<div class='author' style='padding-bottom: 15px'>auteur: " + list[i][2] + "</div>" +
                                     "<div class='category' style='padding-bottom: 3px; vertical-align: bottom'>" + list[i][3] + "</div>" +
                                 "</div>" +
@@ -98,6 +102,7 @@ $(document).ready(function () {
                         "</div>");
                 }
             }
+            cardClick();
         },
         error: function (message, er) {
             console.log("downloading book list: " + er);
