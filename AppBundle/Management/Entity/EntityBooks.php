@@ -1,17 +1,23 @@
 <?php
-
+require_once('ProjectConstants.php');
 
 class EntityBooks
 {
+    private $connexion;
+
+    public function __construct()
+    {
+        $constants = new ProjectConstants();
+        $this->connexion = $constants->getConnexion();
+    }
+
     function getBooks():array
     {
         $ligne = array();
         try
         {
-            $connexion = new PDO("mysql:host=localhost;dbname=booksales;port=3308,charset=utf8","root","");
-            $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $requete = "SELECT * FROM book";
-            $resultat = $connexion->query($requete);
+            $resultat = $this->connexion->query($requete);
             $ligne = $resultat->fetchAll();
 
             return $ligne;
