@@ -1,3 +1,12 @@
+let getUrl = window.location;
+let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1] + "/" + getUrl.pathname.split('/')[2];
+    
+let completeUrlAdd= baseUrl + "/Pages/UserPages/addUser.html"
+$('.addButton').click(function() {location.replace(completeUrlAdd);});
+
+let completeUrlMain= baseUrl + "/Pages/index.html"
+$('.addButton').click(function() {location.replace(completeUrlMain);});
+/*
 $(document).ready(function () {
     let getUrl = window.location;
     let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1] + "/" + getUrl.pathname.split('/')[2];
@@ -16,4 +25,4 @@ $(document).ready(function () {
             window.location.href = "index.html?formationID=" + item.substr(1, item.length);
         }
     });
-});
+});*/
