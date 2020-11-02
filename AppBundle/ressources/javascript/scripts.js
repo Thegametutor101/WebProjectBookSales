@@ -14,8 +14,8 @@ function headerListener() {
 function cardClick()
 {
     $('.card').click(function(){
-        let item = $(this).find(".top").find(".rightSide").find(".id").text();
-        if (confirm("Voullez vous vraiment supprimer la formation : " + item.substr(1, item.length))) {
+        let item = $(this).find(".id").text();
+        if (confirm("Voullez vous vraiment supprimer la formation : " + item)) {
             // window.location.href = "index.html?formationID=" + item.substr(1, item.length);
             console.log("ded");
         }
