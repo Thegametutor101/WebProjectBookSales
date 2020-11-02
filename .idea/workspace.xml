@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3705c003-8ff2-443e-9a69-edc5f34c7954" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/FabBMull120.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/Pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +71,7 @@
       <workItem from="1603992352959" duration="11133000" />
       <workItem from="1604338014265" duration="3266000" />
       <workItem from="1604342562472" duration="5296000" />
-      <workItem from="1604352977241" duration="3488000" />
+      <workItem from="1604352977241" duration="4127000" />
     </task>
     <servers />
   </component>
