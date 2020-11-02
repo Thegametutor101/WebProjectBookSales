@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../../ressources/css/styles.css">
+    <meta charset="UTF-8">
+    <title>Banner</title>
+</head>
+<body>
+  <div class="main">
+      <div class="header">
+          
+        </div>
+        <div class="container">
+            <p class="paragraphe_titre">Ajouter un produit</p>
+            <form action="../../Management/addUser.php" method="post" class="formulaire">
+                    <label for="id">ID</label><br>
+                    <input class="input" type="text" id="id" name="id"><br><br>
+    
+                    <label for="firstName">Prénom</label><br>
+                    <input class="input" type="text" id="firstName" name="firstName"><br><br>
+    
+                    <label for="lastName">Nom</label><br>
+                    <input class="input" type="text" id="lastName" name="lastName"><br><br>
+    
+                    <label  for="email">Email</label><br>
+                    <input class="input" type="text" id="email" name="email"><br><br>
+    
+                    <label  for="phone">Téléphone</label><br>
+                    <input class="input" type="text" id="phone" name="phone"><br><br>
+    
+                    <label  for="password">Mot de passe</label><br>
+                    <input class="input" type="text" id="password" name="password"><br><br>
+                    
+                    <input class="input" type="submit" value="Valider">
+                    <input class="input" type="reset" value="Effacer"> 
+                </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="../../ressources/javascript/scripts.js">
+
+$(document).ready(function () {
+ $.get("../header.html", function( data ) {
+        let body=data.replace(/^.*?<body>(.*?)<\/body>.*?$/s,"$1");
+        $(".header").html(body);
+    });
+
+});
+</script>
