@@ -60,24 +60,9 @@ $(document).ready(function () {
         type: "POST",
         dataType: "json",
         success: function(result){
-            console.log("downloading book list: success");
-            let list = result["lines"];
-            for (i = 0; i < list.length; i++) {
-                if (list[i][5] === "1") {
-                    $(".container").append(
-                        "<div class='card'>" +
-                            "<img src='../ressources/bookPictures/" + list[i][0] + "' class='bookPicture' alt='" + list[i][1] + "'>" +
-                            "<div class='id' style=';vertical-align: top;display: none'>" + list[i][0] + "</div>" +
-                        "</div>");
-                }
-            }
+            printCards(result["lines"]);
             cardClick();
-            $(window).load(function(){
-                $('.card').find('img').each(function(){
-                    let imgClass = (this.width/this.height > 1) ? 'wide' : 'tall';
-                    $(this).addClass(imgClass);
-                });
-            });
+            formatBookCover();
         },
         error: function (message, er) {
             console.log("downloading book list: " + er);

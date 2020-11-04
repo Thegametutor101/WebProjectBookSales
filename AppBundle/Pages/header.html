@@ -11,18 +11,18 @@
         <button class=" material-icons headerButton addButton">add</button>
     </div>
     <div class="searchBar">
-        <button class="material-icons searchSubmit">search</button>
+        <button class="material-icons searchSubmit headerButton">search</button>
         <input id="searchValue" type="text" name="searchValue" placeholder="Que cherchez-vous aujourd'hui?">
-        <div class="customSelect">
-            <select id="searchFilter" name="searchFilter" >
+        <div class="customSelect" id="searchFilter">
+            <select id="searchFilters" name="searchFilter" >
                 <option value="None">-- Chercher par... --</option>
                 <option value="Title">Titre</option>
                 <option value="Category">Catégorie</option>
                 <option value="Author">Auteur</option>
             </select>
         </div>
-        <div class="customSelect" id="lastDrop">
-            <select id="searchSort" name="searchSort" >
+        <div class="customSelect" id="searchSort">
+            <select id="searchSorts" name="searchSort" >
                 <option value="None">-- Trier par... --</option>
                 <option value="PriceLeast">Prix - du moins élevé</option>
                 <option value="PriceMost">Prix - du plus élevé</option>
@@ -46,8 +46,11 @@
         /*for each element, create a new DIV that will act as the selected item:*/
         a = document.createElement("DIV");
         a.setAttribute("class", "select-selected");
-        if (selElmnt.parentElement.id == "lastDrop") {
-            a.setAttribute("class", "select-selected lastDrop")
+        if (selElmnt.parentElement.id == "searchSort") {
+            a.setAttribute("class", "select-selected lastDrop searchSort")
+        }
+        if (selElmnt.parentElement.id == "searchFilter") {
+            a.setAttribute("class", "select-selected searchFilter")
         }
         a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
         x[i].appendChild(a);
