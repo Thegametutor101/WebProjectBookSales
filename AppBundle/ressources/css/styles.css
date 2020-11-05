@@ -28,72 +28,167 @@
     text-align: left;
     align-content: start;
     justify-content: center;
-    padding: 2px;
+    height: 54px;
+    padding: 4px;
 }
-
-
-button {
+.banner {
+    display: flex;
+    flex-direction: row;
+}
+.navButtons {
+    width: 20%;
+    height: 100%;
+}
+.headerButton {
     background-color: #2e2e2e;
     border: none;
-    margin-right: 2px;
     color: white;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     border-radius: 12px;
-    padding: 15PX;
+    padding: 15px;
+    width: 25%;
 }
-
-button:hover {
-    background-color:#d9b85f;
+.headerButton:hover {
+    box-shadow: 7px 6px 28px 1px rgba(230, 197, 108, 0.24);
+    cursor: pointer;
+    outline: none;
+    background-color: #d9b85f;
     color: white;
 }
-button:active {
+.headerButton:active {
+    transform: scale(0.98);
+    /* Scaling button to 0.98 to its original size */
+    box-shadow: 3px 2px 22px 1px rgba(230, 197, 108, 0.24);
+    /* Lowering the shadow */
     background-color: #e6c56c;
     color: white;
 }
-.dropbtn {
-    background-color: #454545;
-    color: white;
-    width: 100%;
-    padding: 16px 470px;
-    font-size: 16px;
-    border: none;
-    border-radius: 0;
-}
 .searchBar {
-    position: relative;
-    display: inline-block;
+    margin: 0 10px;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
 }
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #949494;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 1;
-    width: 100%;
-}
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
+.searchSubmit {
+    background-color: #2e2e2e;
+    border: none;
+    color: white;
     text-decoration: none;
-    display: block;
+    font-size: 16px;
+    border-radius: 8px 0 0 8px;
+    padding: 15px;
+    width: 7%;
+    outline: none;
 }
-.dropdown-content a:hover {
-    background-color: #ddd;
+#searchValue {
+    height: 100%;
+    width: 40%;
+    margin-left: -4px;
+    border: none;
+    background-color: #2e2e2e;
+    font-size: 16px;
+    padding: 18px;
 }
-.searchBar:hover .dropdown-content {
-    display: block;
+#searchValue:focus {
+    outline: none;
+    border: 2px solid #d9b85f;
+    color: white;
 }
-.searchBar:hover .dropbtn {
-    background-color: #3e8e41;
+.customSelect {
+    position: relative;
+    width: 25%;
+}
+.customSelect select {
+    display: none; /*hide original SELECT element:*/
+}
+.select-selected {
+    background-color: #2e2e2e;
+    height: 68%;
+    font-size: 16px;
+    text-align: center;
+}
+/*style the arrow inside the select element:*/
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: white transparent transparent transparent;
+}
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+}
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+    color: white;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+}
+/*style items (options):*/
+.select-items {
+    position: absolute;
+    background-color: rgb(63, 63, 63);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+/*hide the items when the select box is closed:*/
+.select-hide {
+    display: none;
+}
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.lastDrop {
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.userAndPageName {
+    width: 20%;
+    height: 100%;
 }
 .pageName {
-    float: right;
     font-size: 25px;
-    text-align: center;
-    padding: 10px 35px;
+    height: 100%;
+    text-align: right;
+    width: 70%;
+    padding: 12px 5% 12px 0;
+    display: inline-block;
+}
+.profilePicture {
+    margin-right: 2%;
+    float: right;
+    border: none;
+    border-radius: 30px;
+    align-self: end;
+    height: 100%;
+    padding: 5px;
+    width: 20%;
+    background: transparent;
+    transition: 0.2s all;
+}
+.profilePicture:hover {
+    box-shadow: 7px 6px 28px 1px rgba(230, 197, 108, 0.24);
+    cursor: pointer;
+    outline: none;
+}
+.profilePicture:active {
+    transform: scale(0.98);
+    /* Scaling button to 0.98 to its original size */
+    box-shadow: 3px 2px 22px 1px rgba(230, 197, 108, 0.24);
+    /* Lowering the shadow */
 }
 #stockView {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -103,17 +198,19 @@ button:active {
     overflow: auto;
     scrollbar-base-color: #454545;
 }
-
 #stockView td, #stockView th {
     border: 1px solid #ddd;
     padding: 8px;
 }
-
-#stockView tr:nth-child(even){background-color: #f2f2f2;}
-
-#stockView tr:hover {background-color: #ddd;}
-#stockView thead {position: relative}
-
+#stockView tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+#stockView tr:hover {
+    background-color: #ddd;
+}
+#stockView thead {
+    position: relative
+}
 #stockView th {
     padding-top: 12px;
     padding-bottom: 12px;
@@ -124,8 +221,6 @@ button:active {
 .tableButtonDelete .tableButtonModify {
     padding: 5px 15px;
 }
-
-
 .container_page{
     margin: 20px;
     padding: 15px;

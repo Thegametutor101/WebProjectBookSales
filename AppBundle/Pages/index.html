@@ -23,46 +23,26 @@
         margin: 10px 50px;
     }
     .container > .card {
-        border: 2px solid #c3c3c3;
+        border: 2px solid #404040;
         border-radius: 3px;
         margin: 10px 25px;
-        width: 250px;
+        width: 200px;
+        height: 300px;
         padding: 5px;
-        background-color: #4c74af;
+        background-color: #a38d27;
         color: #f2f2f2;
         display: flex;
         flex-direction: column;
     }
-    .top {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        height: 86%;
+    .card img.wide {
+        max-width: 100%;
+        max-height: 100%;
+        height: auto;
     }
-    .bottom {
-        height: 14%;
-        text-align: right;
-        vertical-align: text-bottom;
-        font-size: 25px;
-        color: #ff7878;
-    }
-    .id {
-        font-size: 13px;
-        text-align: right;
-    }
-    .leftSide {
-        width: 40%;
-    }
-    .rightSide {
-        width: 60%;
-        height: 150%;
-        text-align: left;
-        vertical-align: center;
-        padding: 5px;
-    }
-    .bookPicture {
-        size: 40px;
-        border-radius: 3px;
+    .card img.tall {
+        max-height: 100%;
+        max-width: 100%;
+        width: auto;
     }
 </style>
 <script src="../ressources/javascript/scripts.js"></script>
@@ -72,6 +52,7 @@ $(document).ready(function () {
         let body=data.replace(/^.*?<body>(.*?)<\/body>.*?$/s,"$1");
         $(".header").html(body);
         $(".pageName").text("Acceuil");
+        $("#searchValue").focus()
         headerListener();
     });
     $.ajax({
@@ -79,30 +60,9 @@ $(document).ready(function () {
         type: "POST",
         dataType: "json",
         success: function(result){
-            console.log("downloading book list: success");
-            let list = result["lines"];
-            for (i = 0; i < list.length; i++) {
-                if (list[i][5] === "1") {
-                    $(".container").append(
-                        "<div class='card'>" +
-                            "<div class='top'>" +
-                                "<div class='leftSide'>" +
-                                    "<div class='material-icons bookPicture'>image</div>" +
-                                "</div>" +
-                                "<div class='rightSide'>" +
-                                    "<div class='id' style=';vertical-align: top'>#" + list[i][0] + "</div><hr>" +
-                                    "<div class='title' style='padding-bottom: 3px;padding-top: 15px'>titre: " + list[i][1] + "</div>" +
-                                    "<div class='author' style='padding-bottom: 15px'>auteur: " + list[i][2] + "</div>" +
-                                    "<div class='category' style='padding-bottom: 3px; vertical-align: bottom'>" + list[i][3] + "</div>" +
-                                "</div>" +
-                            "</div>" +
-                            "<div class='bottom'>" +
-                                "<div class='price'>" + list[i][6] + "$</div>" +
-                            "</div>" +
-                        "</div>");
-                }
-            }
+            printCards(result["lines"]);
             cardClick();
+            formatBookCover();
         },
         error: function (message, er) {
             console.log("downloading book list: " + er);
