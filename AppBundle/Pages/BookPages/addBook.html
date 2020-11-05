@@ -10,6 +10,53 @@
 <body>
 <div class="main">
     <div class="header"></div>
+    <div class="container_page">
+        <p class="paragraphe_titre">Ajouter un livre</p>
+        <form action="../../Management/addUser.php" method="post" class="formulaire">
+
+                <label for="titleBook">Titre du livre</label><br>
+                <input class="inputBook" type="text" id="titleBook" name="titleBook"><br><br>
+
+                <label for="authorBook">Auteur</label><br>
+                <input class="inputBook" type="text" id="authorBook" name="authorBook"><br><br>
+
+                <label  for="categoryBook">Catégorie</label><br>
+                <select id="categoryBook" name="categoryBook">
+                    <option value="administration">Administration</option>
+                    <option value="art">Art</option>
+                    <option value="architecture">Architecture</option>
+                    <option value="communication">Communication</option>
+                    <option value="economie">Économie</option>
+                    <option value="education physique">Éducation physique</option>
+                    <option value="francais">Français</option>
+                    <option value="geographie">Géographie</option>
+                    <option value="histoire">Histoire</option>
+                    <option value="Legal">Légal</option>
+                    <option value="mathematique">Mathématique</option>
+                    <option value="medical">Médical</option>
+                    <option value="musique">Musique</option>
+                    <option value="philosophie">Philosophie</option>
+                    <option value="Technologie">Technologie</option>
+                    <option value="Théatre">Theatre</option>
+                    <option value="Autre">Autre</option>
+                  </select><br><br>
+
+                <label  for="descriptBook">Decription</label><br>
+                <input class="inputBook" type="text" id="descriptBook" name="descriptBook"><br><br>
+
+                <label  for="availableBook">Est-ce que ce livre est disponible pour la vente?</label><br>
+                <select id="availableBook" name="availableBook">
+                    <option value="1">Oui</option>
+                    <option value="0">Non</option>
+                  </select><br><br>
+
+                <label  for="priceBook">Prix de vente</label><br>
+                <input class="inputBook" type="number" id="priceBook" name="priceBook" step=".01"><br><br>
+                
+                <input class="inputBook formButton" type="submit" value="Valider">
+                <input class="inputBook formButton" type="reset" value="Effacer"> 
+            </form>
+    </div>
 </div>
 </body>
 <script src="../../ressources/javascript/scripts.js"></script>
