@@ -9,9 +9,11 @@ function headerListener() {
         window.location.href = baseUrl + "/Pages/index.html";
     });
     $('.searchSubmit').click(function () {
-        let text = $("#searchValue").text();
+        let text = $("#searchValue").val();
         let filter = $(".searchFilter").text();
         let sort = $(".searchSort").text();
+        filter = filter.replace(/é/g, "e");
+        sort = sort.replace(/é/g, "e");
         let values = {
             "searchValue" : text,
             "searchFilter" : filter,
@@ -23,12 +25,19 @@ function headerListener() {
             data: values,
             dataType: "json",
             success: function(result){
+                $(".bookList").empty();
+                if (result["notFound"]) {
+                    $(".messages").empty();
+                    $(".messages").append("<div>Aucun livre correspondant à votre recherche n'a été trouvé.</div><br><hr>")
+                } else {
+                    $(".messages").empty();
+                }
                 printCards(result["lines"]);
                 cardClick();
                 formatBookCover();
             },
             error: function (message, er) {
-                console.log("downloading book list: " + er);
+                console.log("downloading book list: " + message);
             }
         });
     });
@@ -45,9 +54,10 @@ function cardClick()
 }
 function printCards(list) {
     console.log("downloading book list: success");
+    console.log(list);
     for (i = 0; i < list.length; i++) {
         if (list[i][5] === "1") {
-            $(".container").append(
+            $(".bookList").append(
                 "<div class='card'>" +
                 "<img src='../ressources/bookPictures/" + list[i][0] + "' class='bookPicture' alt='" + list[i][1] + "'>" +
                 "<div class='id' style=';vertical-align: top;display: none'>" + list[i][0] + "</div>" +
@@ -61,10 +71,7 @@ function printCards(list) {
     }
 }
 function formatBookCover() {
-    $(window).load(function(){
-        $('.card').find('img').each(function(){
-            let imgClass = (this.width/this.height > 1) ? 'wide' : 'tall';
-            $(this).addClass(imgClass);
-        });
+    $('.card').find('img').each(function(i, item){
+        $(this).css({"width":"100%", "height":"100%"});
     });
 }
