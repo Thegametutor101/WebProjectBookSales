@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+    <title>Ajouter utilisateur</title>
     <link rel="stylesheet" type="text/css" href="../../ressources/css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>Banner</title>
 </head>
 <body>
   <div class="main">
@@ -31,8 +34,8 @@
                     <label  for="passwordUser">Mot de passe</label><br>
                     <input class="inputUser" type="text" id="passwordUser" name="passwordUser"><br><br>
                     
-                    <input class="inputUser" type="submit" value="Valider">
-                    <input class="inputUser" type="reset" value="Effacer"> 
+                    <input class="inputUser formButton" type="submit" value="Valider">
+                    <input class="inputUser formButton" type="reset" value="Effacer"> 
                 </form>
         </div>
     </div>
@@ -42,12 +45,12 @@
 <script src="../../ressources/javascript/scripts.js">
 
 $(document).ready(function () {
- $.get("../header.html", function( data ) {
-    let body=data.replace(/^.*?<body>(.*?)<\/body>.*?$/s,"$1");
+    $.get("../header.html", function (data) {
+        let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
         $(".header").html(body);
-        $(".pageName").text("Ajout utilisateur");
+        $(".pageName").text("Nouvel utilisateur");
+        $(".profilePicture").find("img").attr("src","../../ressources/userPictures/defaultUserProfile.png");
         headerListener();
     });
-
 });
 </script>
