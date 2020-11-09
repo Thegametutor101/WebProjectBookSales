@@ -28,15 +28,6 @@
     .messages {
         width: 100%;
     }
-    .messages > div {
-        background-color: rgba(244,105,105,0.7);
-        border: 2px solid rgba(244,46,46,0.7);
-        color: white;
-        font-size: 18px;
-        font-weight: bold;
-        padding: 10px;
-        border-radius: 10px;
-    }
     .bookList {
         display: flex;
         flex-direction: row;
@@ -69,11 +60,10 @@ $(document).ready(function () {
     $.get("header.html", function( data ) {
         let body=data.replace(/^.*?<body>(.*?)<\/body>.*?$/s,"$1");
         $(".header").html(body);
-        $(".pageName").text("Acceuil");
+        $(".pageName").text("Accueil");
         $("#searchValue").focus();
-        console.log($(".isLoggedIn").text);
-        if ($(".isLoggedIn").text === "0") {
-            $(".addButton").css("display", "none")
+        if (getUrlParameter('isLoggedIn') === "0" || isNaN(getUrlParameter('isLoggedIn'))) {
+            $(".addButton").css("display", "none");
         }
         headerListener();
     });

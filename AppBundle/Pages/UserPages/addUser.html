@@ -10,38 +10,89 @@
 <body>
 <div class="main">
     <div class="header"></div>
-    <div class="container_page">
-        <p class="paragraphe_titre">Créer un nouvel utilisateur</p>
-        <form action="../../Management/addUser.php" method="post" class="formulaire">
-
-            <label for="idUser">Prénom</label><br>
-            <input class="inputUser" type="text" id="idUser" name="idUser"><br><br>
-
-            <label for="firstNameUser">Prénom</label><br>
-            <input class="inputUser" type="text" id="firstNameUser" name="firstNameUser"><br><br>
-
-            <label for="lastNameUser">Nom</label><br>
-            <input class="inputUser" type="text" id="lastNameUser" name="lastNameUser"><br><br>
-
-            <label  for="emailUser">Email</label><br>
-            <input class="inputUser" type="text" id="emailUser" name="emailUser"><br><br>
-
-            <label  for="phoneUser">Téléphone</label><br>
-            <input class="inputUser" type="text" id="phoneUser" name="phoneUser"><br><br>
-
-            <label  for="passwordUser">Mot de passe</label><br>
-            <input class="inputUser" type="text" id="passwordUser" name="passwordUser"><br><br>
-
-            <input class="inputUser formButton" type="submit" value="Valider">
-            <input class="inputUser formButton" type="reset" value="Effacer">
+    <div class="container">
+        <div style="padding: 10px 0; font-size: 40px;">Création de compte</div><br>
+        <div class="messages"></div>
+        <form action="../../Management/addUser.php" method="post" enctype="multipart/form-data">
+            <div class="mainForm">
+                <div id="left">
+                    <label class="labels">Nom</label>
+                    <label class="labels" for="email">Email</label>
+                    <label class="labels" for="phone">Téléphone</label>
+                    <label class="labels" for="password">Mot de passe</label>
+                    <label class="labels" for="passwordConfirm">Veuillez confirmer le mot de passe</label>
+                </div>
+                <div id="right">
+                    <div class="userName">
+                        <input class="inputs name" id="firstName" name="firstName" type="text" autofocus required aria-required="true" aria-invalid="false">
+                        <input class="inputs name" id="lastName" name="lastName" type="text" required aria-required="true" aria-invalid="false">
+                    </div>
+                    <input class="inputs" id="email" name="email" type="text">
+                    <input class="inputs" id="phone" name="phone" type="text">
+                    <input class="inputs" id="password" name="password" type="password">
+                    <input class="inputs" id="passwordConfirm" name="passwordConfirm" type="password">
+                </div>
+            </div><br>
+            <input class="inputUser headerButton" type="submit" value="Valider">
+            <input class="inputUser headerButton" type="reset" value="Effacer">
         </form>
     </div>
 </div>
 </body>
 </html>
 <style>
+    .container {
+        max-width: 30%;
+        width: 30%;
+        padding: 15px 5%;
+        margin: 15px 30%;
+        background-color: #404040;
+    }
+    .messages {
+        width: 100%;
+    }
+    .mainForm {
+        display: flex;
+        flex-direction: row;
+    }
+    #left {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+    }
+    #right {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+    }
+    .labels {
+        margin-top: 5px;
+        height: 50%;
+        text-align: left;
+    }
+    .inputs {
+        width: 90%;
+        border: none;
+        background-color: #2e2e2e;
+        font-size: 16px;
+        margin: 5px 0;
+        padding: 5px;
+    }
+    .userName {
+        max-width: 93.5%;
+    }
+    .name {
+        width: 45%;
+    }
+    .inputs:focus {
+        outline: none;
+        border: 2px solid #d9b85f;
+        color: white;
+    }
     .pageName {
         font-size: 20px;
+        width: 80%;
+        float: right;
     }
 </style>
 <script src="../../ressources/javascript/scripts.js"></script>
@@ -51,7 +102,9 @@
             let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
             $(".header").html(body);
             $(".pageName").text("Nouvel utilisateur");
-            $(".profilePicture").find("img").attr("src","../../ressources/userPictures/defaultUserProfile.png");
+            $(".searchBar").css("visibility", "hidden");
+            $(".addButton").css("display", "none");
+            $(".profilePicture").css("display", "none");
             headerListener();
         });
     });

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion</title>
+    <link rel="stylesheet" type="text/css" href="../../ressources/css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="main">
+    <div class="header"></div>
+    <div class="container">
+        <div style="padding: 10px 0; font-size: 40px;">Connexion</div><br>
+        <div class="messages"></div>
+        <form action="../../Management/login.php" enctype="multipart/form-data" method="post">
+            <div class="mainForm">
+                <div id="left">
+                    <label class="labels" for="email">Courriel</label>
+                    <label class="labels" for="password">Mot de passe</label>
+                </div>
+                <div id="right">
+                    <input class="inputs" id="email" name="email" type="text" placeholder="exemple@gmail.com" autofocus required aria-required="true" aria-invalid="false">
+                    <input class="inputs" id="password" name="password" type="password" required aria-required="true" aria-invalid="false">
+                </div>
+            </div>
+            <button class="headerButton loginButton" style="margin: 10px 0">Connexion</button>
+        </form>
+        <hr>
+        <div style="padding: 10px 0;font-size: 16px">Pas encore de compte avec nous? <a class="createAccountButton">Cliquez ici!</a></div>
+    </div>
+</div>
+</body>
+<style>
+    .container {
+        max-width: 30%;
+        width: 30%;
+        padding: 15px 5%;
+        margin: 15px 30%;
+        background-color: #404040;
+    }
+    .messages {
+        width: 100%;
+    }
+    .mainForm {
+        display: flex;
+        flex-direction: row;
+    }
+    #left {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+    }
+    #right {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+    }
+    .labels {
+        margin-top: 5px;
+        height: 50%;
+        text-align: left;
+    }
+    .inputs {
+        width: 95%;
+        border: none;
+        background-color: #2e2e2e;
+        font-size: 16px;
+        margin: 5px 0;
+        padding: 5px;
+    }
+    .inputs:focus {
+        outline: none;
+        border: 2px solid #d9b85f;
+        color: white;
+    }
+    .pageName {
+        width: 80%;
+        float: right;
+    }
+    a {
+        color: #0055e5;
+        cursor: pointer;
+    }
+    a:hover {
+        color: #2167e3;
+        box-shadow: 3px 2px 22px 1px rgba(46, 46, 46, 0.24);
+        font-size: 17px;
+    }
+    a:active {
+        color: #144bac;
+        font-size: 15px;
+        box-shadow: 3px 2px 22px 1px rgba(46, 46, 46, 0.24);
+    }
+</style>
+<script src="../../ressources/javascript/scripts.js"></script>
+<script>
+$(document).ready(function () {
+    $.get("../header.html", function (data) {
+        let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
+        $(".header").html(body);
+        $(".pageName").text("Connexion");
+        $(".searchBar").css("visibility", "hidden");
+        $(".addButton").css("display", "none");
+        $(".profilePicture").css("display", "none");
+        headerListener();
+    });
+    connectAccount();
+});
+</script>
+</html>
