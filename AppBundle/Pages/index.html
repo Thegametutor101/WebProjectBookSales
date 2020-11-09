@@ -70,7 +70,11 @@ $(document).ready(function () {
         let body=data.replace(/^.*?<body>(.*?)<\/body>.*?$/s,"$1");
         $(".header").html(body);
         $(".pageName").text("Acceuil");
-        $("#searchValue").focus()
+        $("#searchValue").focus();
+        console.log($(".isLoggedIn").text);
+        if ($(".isLoggedIn").text === "0") {
+            $(".addButton").css("display", "none")
+        }
         headerListener();
     });
     $.ajax({

@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    <meta charset="UTF-8">
     <title>Ajouter utilisateur</title>
     <link rel="stylesheet" type="text/css" href="../../ressources/css/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-  <div class="main">
-      <div class="header">
-        </div>
-        <div class="container_page">
-            <p class="paragraphe_titre">Créer un nouvel utilisateur</p>
-            <form action="../../Management/addUser.php" method="post" class="formulaire">
+<div class="main">
+    <div class="header"></div>
+    <div class="container_page">
+        <p class="paragraphe_titre">Créer un nouvel utilisateur</p>
+        <form action="../../Management/addUser.php" method="post" class="formulaire">
 
-                    <label for="idUser">Prénom</label><br>
-                    <input class="inputUser" type="text" id="idUser" name="idUser"><br><br>
+            <label for="idUser">Prénom</label><br>
+            <input class="inputUser" type="text" id="idUser" name="idUser"><br><br>
 
-                    <label for="firstNameUser">Prénom</label><br>
-                    <input class="inputUser" type="text" id="firstNameUser" name="firstNameUser"><br><br>
-    
-                    <label for="lastNameUser">Nom</label><br>
-                    <input class="inputUser" type="text" id="lastNameUser" name="lastNameUser"><br><br>
-    
-                    <label  for="emailUser">Email</label><br>
-                    <input class="inputUser" type="text" id="emailUser" name="emailUser"><br><br>
-    
-                    <label  for="phoneUser">Téléphone</label><br>
-                    <input class="inputUser" type="text" id="phoneUser" name="phoneUser"><br><br>
-    
-                    <label  for="passwordUser">Mot de passe</label><br>
-                    <input class="inputUser" type="text" id="passwordUser" name="passwordUser"><br><br>
-                    
-                    <input class="inputUser formButton" type="submit" value="Valider">
-                    <input class="inputUser formButton" type="reset" value="Effacer"> 
-                </form>
-        </div>
+            <label for="firstNameUser">Prénom</label><br>
+            <input class="inputUser" type="text" id="firstNameUser" name="firstNameUser"><br><br>
+
+            <label for="lastNameUser">Nom</label><br>
+            <input class="inputUser" type="text" id="lastNameUser" name="lastNameUser"><br><br>
+
+            <label  for="emailUser">Email</label><br>
+            <input class="inputUser" type="text" id="emailUser" name="emailUser"><br><br>
+
+            <label  for="phoneUser">Téléphone</label><br>
+            <input class="inputUser" type="text" id="phoneUser" name="phoneUser"><br><br>
+
+            <label  for="passwordUser">Mot de passe</label><br>
+            <input class="inputUser" type="text" id="passwordUser" name="passwordUser"><br><br>
+
+            <input class="inputUser formButton" type="submit" value="Valider">
+            <input class="inputUser formButton" type="reset" value="Effacer">
+        </form>
     </div>
+</div>
 </body>
 </html>
-
-<script src="../../ressources/javascript/scripts.js">
-
-$(document).ready(function () {
-    $.get("../header.html", function (data) {
-        let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
-        $(".header").html(body);
-        $(".pageName").text("Nouvel utilisateur");
-        $(".profilePicture").find("img").attr("src","../../ressources/userPictures/defaultUserProfile.png");
-        headerListener();
+<style>
+    .pageName {
+        font-size: 20px;
+    }
+</style>
+<script src="../../ressources/javascript/scripts.js"></script>
+<script>
+    $(document).ready(function () {
+        $.get("../header.html", function (data) {
+            let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
+            $(".header").html(body);
+            $(".pageName").text("Nouvel utilisateur");
+            $(".profilePicture").find("img").attr("src","../../ressources/userPictures/defaultUserProfile.png");
+            headerListener();
+        });
     });
-});
 </script>

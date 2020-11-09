@@ -145,7 +145,7 @@ class EntityBooks
             $result = $this->connexion->query($request);
             $lines = $result->fetchAll();
 
-            return $lines;
+            return array($lines, $success);
         }
         catch(PDOException $e) {
             echo "echec de connexion à la base de donnees: " . $e->getMessage();

@@ -80,6 +80,3 @@ if ($succes=true){
     }
 
 }
-
-?>
-
