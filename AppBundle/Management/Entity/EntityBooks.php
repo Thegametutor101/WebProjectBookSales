@@ -337,4 +337,27 @@ class EntityBooks
             return $lines;
         }
     }
+    function addBook($id,$title,$author,$category,$description,$disponible,$prix,$owner):bool
+    {
+        $succes=false;
+        try 
+        {
+            $requete = "INSERT INTO book (id,title,author,category,description,available,price,owner) VALUES('$id', '$titre','$auteur','$categorie','$description','$disponible','$prix')"; 
+            $result = $this->connexion->query($request);
+            $lines = $result->fetchAll();
+
+            echo "Ajout réussi";
+            $succes = true;
+            header("Location: Pages/index.html");
+            exit;
+        } 
+
+        catch(PDOException $e) {
+                echo "Échec de connexion à la base de données: " . $e->getMessage();
+                $succes =false;
+        }
+        return $succes;
+    }
+
+
 }

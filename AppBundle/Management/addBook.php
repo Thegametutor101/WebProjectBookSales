@@ -1,32 +1,14 @@
 <?php
 
-try 
-{   
-    $connexion = new PDO("mysql:host=localhost;dbname=booksales;port=3306", "root", "" );
-    $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-    $id = 1;
-    $titre = $_POST["titleBook"];
-    $auteur = $_POST["authorBook"];
-    $categorie = $_POST["categoryBook"];
-    $description = $_POST["descriptBook"];
-    $disponible = $_POST["availableBook"];
-    $prix = $_POST["priceBook"];
-    $succes = false;
+  $id = 1;
+  $titre = $_POST["titleBook"];
+  $auteur = $_POST["authorBook"];
+  $categorie = $_POST["categoryBook"];
+  $description = $_POST["descriptBook"];
+  $disponible = $_POST["availableBook"];
+  $prix = $_POST["priceBook"];
 
-
-
-    $requete = "INSERT INTO book (id,title,author,category,description,available,price,owner) VALUES('$id', '$titre','$auteur','$categorie','$description','$disponible','$prix')"; 
-    $connexion->exec($requete);
-    $connexion = null;
-    echo "Ajout réussi";
-    $succes = true;
-    header("Location: Pages/index.html");
-    exit;
-} 
-
-catch(PDOException $e) {
-      echo "Échec de connexion à la base de données: " . $e->getMessage();
-}
+  $succes = false;
 
 
 
