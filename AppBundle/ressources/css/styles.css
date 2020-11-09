@@ -223,8 +223,30 @@
 }
 .container_page{
     margin: 20px;
+    padding: 15px;
     background-color: #4a4a4a;
     color: white;
     justify-content: center;
     text-align: center;
+}
+
+.formButton{
+    background-color: #2e2e2e;
+    border: none;
+    margin-right: 2px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 12px;
+    padding: 15PX;
+}
+
+.formButton:hover {
+    background-color:#d9b85f;
+    color: white;
+}
+.formButton:active {
+    background-color: #e6c56c;
+    color: white;
 }

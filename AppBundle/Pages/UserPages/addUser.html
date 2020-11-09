@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
+    <title>Ajouter utilisateur</title>
     <link rel="stylesheet" type="text/css" href="../../ressources/css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta charset="UTF-8">
-    <title>Banner</title>
 </head>
 <body>
   <div class="main">
       <div class="header">
-          
         </div>
-        <div class="container">
-            <p class="paragraphe_titre">Ajouter un produit</p>
+        <div class="container_page">
+            <p class="paragraphe_titre">Créer un nouvel utilisateur</p>
             <form action="../../Management/addUser.php" method="post" class="formulaire">
-                    <label for="id">ID</label><br>
-                    <input class="input" type="text" id="id" name="id"><br><br>
+
+                    <label for="idUser">Prénom</label><br>
+                    <input class="inputUser" type="text" id="idUser" name="idUser"><br><br>
+
+                    <label for="firstNameUser">Prénom</label><br>
+                    <input class="inputUser" type="text" id="firstNameUser" name="firstNameUser"><br><br>
     
-                    <label for="firstName">Prénom</label><br>
-                    <input class="input" type="text" id="firstName" name="firstName"><br><br>
+                    <label for="lastNameUser">Nom</label><br>
+                    <input class="inputUser" type="text" id="lastNameUser" name="lastNameUser"><br><br>
     
-                    <label for="lastName">Nom</label><br>
-                    <input class="input" type="text" id="lastName" name="lastName"><br><br>
+                    <label  for="emailUser">Email</label><br>
+                    <input class="inputUser" type="text" id="emailUser" name="emailUser"><br><br>
     
-                    <label  for="email">Email</label><br>
-                    <input class="input" type="text" id="email" name="email"><br><br>
+                    <label  for="phoneUser">Téléphone</label><br>
+                    <input class="inputUser" type="text" id="phoneUser" name="phoneUser"><br><br>
     
-                    <label  for="phone">Téléphone</label><br>
-                    <input class="input" type="text" id="phone" name="phone"><br><br>
-    
-                    <label  for="password">Mot de passe</label><br>
-                    <input class="input" type="text" id="password" name="password"><br><br>
+                    <label  for="passwordUser">Mot de passe</label><br>
+                    <input class="inputUser" type="text" id="passwordUser" name="passwordUser"><br><br>
                     
-                    <input class="input" type="submit" value="Valider">
-                    <input class="input" type="reset" value="Effacer"> 
+                    <input class="inputUser formButton" type="submit" value="Valider">
+                    <input class="inputUser formButton" type="reset" value="Effacer"> 
                 </form>
         </div>
     </div>
@@ -42,10 +45,12 @@
 <script src="../../ressources/javascript/scripts.js">
 
 $(document).ready(function () {
- $.get("../header.html", function( data ) {
-        let body=data.replace(/^.*?<body>(.*?)<\/body>.*?$/s,"$1");
+    $.get("../header.html", function (data) {
+        let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
         $(".header").html(body);
+        $(".pageName").text("Nouvel utilisateur");
+        $(".profilePicture").find("img").attr("src","../../ressources/userPictures/defaultUserProfile.png");
+        headerListener();
     });
-
 });
 </script>

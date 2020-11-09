@@ -8,6 +8,9 @@ function headerListener() {
     $('.homeButton').click(function () {
         window.location.href = baseUrl + "/Pages/index.html";
     });
+    $('.profilePicture').click(function () {
+        window.location.href = baseUrl + "/Pages/UserPages/addUser.html";
+    });
     $('.searchSubmit').click(function () {
         let text = $("#searchValue").val();
         let filter = $(".searchFilter").text();
@@ -40,6 +43,8 @@ function headerListener() {
                 console.log("downloading book list: " + message);
             }
         });
+
+
     });
 }
 function cardClick()
