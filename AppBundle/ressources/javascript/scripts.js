@@ -1,15 +1,79 @@
 let getUrl = window.location;
 let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1] + "/" + getUrl.pathname.split('/')[2];
 
+
+let getUrlParameter = function getUrlParameter(sParam) {
+    let sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+};
+
+function connectAccount() {
+    $(".loginButton").click(function (e) {
+        e.preventDefault();
+        let email = $("#email").val();
+        let password = $("#password").val();
+        let values = {
+            "email" : email,
+            "password" : password
+        }
+        $.ajax({
+            url: "../../Management/login.php",
+            type: "POST",
+            data: values,
+            dataType: "json",
+            success: function(result){
+                if (result["message"] === "ok") {
+                    window.location.href = baseUrl + "/Pages/index.html?isLoggedIn=1";
+                } else if (result["message"] === "no") {
+                    $(".messages").empty();
+                    $(".messages").append("<div>Courriel ou mot de passe invalide.</div><br><hr>")
+                } else if (result["message"] === "not email") {
+                    $(".messages").empty();
+                    $(".messages").append("<div>Veuillez entrer un courriel valide.</div><br><hr>")
+                } else if (result["message"] === "error") {
+                    $(".messages").empty();
+                    $(".messages").append("<div>Veuillez entrer des données valides.</div><br><hr>")
+                }
+            },
+            error: function (message, er) {
+                console.log("downloading book list: " + er);
+            }
+        });
+    });
+    $(".createAccountButton").click(function () {
+        window.location.href = baseUrl + "/Pages/UserPages/addUser.html";
+    });
+}
 function headerListener() {
     $('.addButton').click(function () {
-        window.location.href = baseUrl + "/Pages/BookPages/addBook.html";
+        if (getUrlParameter('isLoggedIn') === "0" || isNaN(getUrlParameter('isLoggedIn'))) {
+            window.location.href = baseUrl + "/Pages/BookPages/addBook.html";
+        } else {
+            window.location.href = baseUrl + "/Pages/BookPages/addBook.html?isLoggedIn=1";
+        }
     });
     $('.homeButton').click(function () {
-        window.location.href = baseUrl + "/Pages/index.html";
+        if (getUrlParameter('isLoggedIn') === "0" || isNaN(getUrlParameter('isLoggedIn'))) {
+            window.location.href = baseUrl + "/Pages/index.html";
+        } else {
+            window.location.href = baseUrl + "/Pages/index.html?isLoggedIn=1";
+        }
+
     });
     $('.profilePicture').click(function () {
-        window.location.href = baseUrl + "/Pages/UserPages/addUser.html";
+        if (getUrlParameter('isLoggedIn') === "0" || isNaN(getUrlParameter('isLoggedIn'))) {
+            window.location.href = baseUrl + "/Pages/UserPages/connectUser.html";
+        } else {
+
+        }
     });
     $('.searchSubmit').click(function () {
         let text = $("#searchValue").val();

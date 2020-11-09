@@ -65,6 +65,15 @@
     background-color: #e6c56c;
     color: white;
 }
+.messages > div {
+    background-color: rgba(244,105,105,0.7);
+    border: 2px solid rgba(244,46,46,0.7);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+}
 .searchBar {
     margin: 0 10px;
     width: 60%;
@@ -221,15 +230,6 @@
 .tableButtonDelete .tableButtonModify {
     padding: 5px 15px;
 }
-.container_page{
-    margin: 20px;
-    padding: 15px;
-    background-color: #4a4a4a;
-    color: white;
-    justify-content: center;
-    text-align: center;
-}
-
 .formButton{
     background-color: #2e2e2e;
     border: none;
@@ -241,7 +241,6 @@
     border-radius: 12px;
     padding: 15PX;
 }
-
 .formButton:hover {
     background-color:#d9b85f;
     color: white;
