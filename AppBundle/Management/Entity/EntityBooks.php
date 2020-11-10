@@ -336,6 +336,8 @@ class EntityBooks
             return $lines;
         }
     }
+
+
     function addBook($id,$title,$author,$category,$description,$disponible,$prix,$owner):bool
     {
         $succes=false;
@@ -347,7 +349,6 @@ class EntityBooks
 
             echo "Ajout réussi";
             $succes = true;
-            header("Location: Pages/index.html");
             exit;
         } 
 
@@ -357,6 +358,22 @@ class EntityBooks
         }
         return $succes;
     }
+
+    function removeBook($id)
+    {
+        try 
+        {
+            $requete = "DELETE FROM book WHERE id='{$id}'"; 
+            $result = $this->connexion->query($request);
+            echo "Suppression réussi";
+            exit;
+        } 
+
+        catch(PDOException $e) {
+                echo "Échec de connexion à la base de données: " . $e->getMessage();
+        }
+    }
+
 
 
 }

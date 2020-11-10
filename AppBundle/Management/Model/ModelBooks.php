@@ -83,7 +83,7 @@ class ModelBooks
 
    function verifyPrice($price)
    {
-    if(!empty($category))
+    if(!empty($price))
     {
         if($price>0){
             return true;
@@ -99,6 +99,18 @@ class ModelBooks
         return false;
     }
    }
+
+
+
+   function verifyAllAttributeBook($title,$author,$category,$description,$price):bool{
+        if(verifyTitleBook($title)=true && verifyAuthorBook($author)=true && verifyCategory($category)=true &&verifyDescription($description)=true && verifyPrice($price)=true){
+            return true;
+        }
+        else{
+            return false;
+        }
+   }
+
 
 
    function displayAlertBoxError(string $error){

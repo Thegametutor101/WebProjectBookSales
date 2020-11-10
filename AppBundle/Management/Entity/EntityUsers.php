@@ -39,7 +39,7 @@ class EntityUsers
         } 
 
         catch(PDOException $e) {
-
+            echo "echec de connexion à la base de donnees: " . $e->getMessage();
         }
     }
 

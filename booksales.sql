@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `book` (
   PRIMARY KEY (`id`),
   KEY `owner` (`owner`),
   KEY `rentedBy` (`rentedBy`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `book`
