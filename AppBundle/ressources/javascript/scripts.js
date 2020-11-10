@@ -30,7 +30,7 @@ function connectAccount() {
             dataType: "json",
             success: function(result){
                 if (result["message"] === "ok") {
-                    window.location.href = baseUrl + "/Pages/index.html?isLoggedIn=1";
+                    window.location.href = baseUrl + "/Pages/index.html?isLoggedIn=" + result['loggedUser'][0];
                 } else if (result["message"] === "no") {
                     $(".messages").empty();
                     $(".messages").append("<div>Courriel ou mot de passe invalide.</div><br><hr>")
@@ -53,24 +53,24 @@ function connectAccount() {
     });
 }
 function addUser() {
-    $("#phone").keypress(function(event){
+    $("#phone").keydown(function(){
         let keycode = event.keyCode || event.charCode;
         let value = $("#phone").val();
         let length = $("#phone").val().length;
-        if (keycode != 8 && keycode != 46) {
-            if (length === 4 && (value.substr(2,) !== ")")) {
+        if (keycode !== 8 && keycode !== 46) {
+            if (length === 4 && (value.substr(0,1) !== "(")) {
                 $("#phone").val("(" + value.substr(0, 3) + ") " + value.substr(3));
             }
             if (length === 10 && value.substr(9) !== "-") {
                 $("#phone").val(value.substr(0, 9) + "-" + value.substr(9));
             }
         } else {
-            console.log("ok");
-            if (length === 5) {
-                $("#phone").val("(" + value.substr(0, 3) + ") " + value.substr(3));
+            if (length === 8) {
+                $("#phone").val(value.substr(1, 3) + value.substr(6));
             }
-            if (length === 11) {
-                $("#phone").val(value.substr(0, 9) + value.substr(10, 1));
+            if (length === 12) {
+                console.log("ok");
+                $("#phone").val(value.substr(0, 9) + value.substr(10));
             }
         }
     });
@@ -87,50 +87,66 @@ function addUser() {
             "lastName": lastName,
             "email": email,
             "phone": phone,
-            "password": password,
-            "passwordConfirm": passwordConfirm
+            "password": password
         }
-        $.ajax({
-            url: "../../Management/addUser.php",
-            type: "POST",
-            data: values,
-            dataType: "json",
-            success: function(result){
-                if (result["message"] === "ok") {
-                    window.location.href = baseUrl + "/Pages/index.html?isLoggedIn=1";
-                } else if (result["message"] === "no") {
+        if (phone.match(/(?:\(\d{3}\)|\d{3})[ ]?\d{3}[- ]?\d{4}/g)) {
+            if (isNaN(password) || isNaN(passwordConfirm)) {
+                if (password === passwordConfirm) {
+                    $.ajax({
+                        url: "../../Management/addUser.php",
+                        type: "POST",
+                        data: values,
+                        dataType: "json",
+                        success: function(result){
+                            if (result["message"] === "ok") {
+                                window.location.href = baseUrl + "/Pages/index.html?isLoggedIn=" + result['loggedUser'][0];
+                            } else if (result["message"] === "no") {
+                                $(".messages").empty();
+                                $(".messages").append("<div>Il existe déjà un compte sur ce courriel<br>Ou une erreur est survenue.</div><br><hr>")
+                            }
+                        },
+                        error: function (message, er) {
+                            console.log("downloading book list: " + er);
+                        }
+                    });
+                } else {
                     $(".messages").empty();
-                    $(".messages").append("<div>Courriel ou mot de passe invalide.</div><br><hr>")
+                    $(".messages").append("<div>Veuillez confirmer votre mot de passe.</div><br><hr>")
                 }
-            },
-            error: function (message, er) {
-                console.log("downloading book list: " + er);
+            } else {
+                $(".messages").empty();
+                $(".messages").append("<div>Veuillez entrer et confirmer votre mot de passe.</div><br><hr>")
             }
-        });
+        } else {
+            $(".messages").empty();
+            $(".messages").append("<div>Veuillez entrer un téléphone valide.</div><br><hr>")
+        }
     });
     $(".resetButton").click(function (e) {
-        e.preventDefault();
         $(".inputs").val("");
     });
 }
+function addBook() {
+
+}
 function headerListener() {
     $('.addButton').click(function () {
-        if (getUrlParameter('isLoggedIn') === "0" || isNaN(getUrlParameter('isLoggedIn'))) {
+        if (isNaN(getUrlParameter('isLoggedIn'))) {
             window.location.href = baseUrl + "/Pages/BookPages/addBook.html";
         } else {
-            window.location.href = baseUrl + "/Pages/BookPages/addBook.html?isLoggedIn=1";
+            window.location.href = baseUrl + "/Pages/BookPages/addBook.html?isLoggedIn=" + getUrlParameter('isLoggedIn');
         }
     });
     $('.homeButton').click(function () {
-        if (getUrlParameter('isLoggedIn') === "0" || isNaN(getUrlParameter('isLoggedIn'))) {
+        if (isNaN(getUrlParameter('isLoggedIn'))) {
             window.location.href = baseUrl + "/Pages/index.html";
         } else {
-            window.location.href = baseUrl + "/Pages/index.html?isLoggedIn=1";
+            window.location.href = baseUrl + "/Pages/index.html?isLoggedIn=" + getUrlParameter('isLoggedIn');
         }
 
     });
     $('.profilePicture').click(function () {
-        if (getUrlParameter('isLoggedIn') === "0" || isNaN(getUrlParameter('isLoggedIn'))) {
+        if (isNaN(getUrlParameter('isLoggedIn'))) {
             window.location.href = baseUrl + "/Pages/UserPages/connectUser.html";
         } else {
 
@@ -181,6 +197,16 @@ function cardClick()
         //     console.log("ded");
         // }
     });
+}
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
 }
 function printCards(list) {
     console.log("downloading book list: success");

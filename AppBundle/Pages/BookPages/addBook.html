@@ -10,8 +10,19 @@
 <body>
 <div class="main">
     <div class="header"></div>
-    <div class="container_page">
-        <h2>Ajouter un livre</h2>
+    <div class="container">
+        <div style="padding: 10px 0; font-size: 40px;">Ajouter un livre</div><br>
+        <div class="messages"></div>
+        <form>
+            <div class="mainForm">
+                <div id="left">
+
+                </div>
+                <div id="right">
+
+                </div>
+            </div>
+        </form>
         <form action="../../Management/addBook.php" method="post" class="formulaire">
 
                 <label for="titleBook">Titre du livre</label><br>
@@ -63,6 +74,56 @@
     </div>
 </div>
 </body>
+<style>
+    .container {
+        max-width: 30%;
+        width: 30%;
+        padding: 15px 5%;
+        margin: 15px 30%;
+        background-color: #404040;
+    }
+    .messages {
+        width: 100%;
+    }
+    .mainForm {
+        display: flex;
+        flex-direction: row;
+    }
+    #left {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+    }
+    #right {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+    }
+    .labels {
+        margin-top: 10px;
+        height: 100%;
+        text-align: left;
+    }
+    .inputs {
+        width: 90%;
+        border: none;
+        background-color: #2e2e2e;
+        font-size: 16px;
+        margin: 5px 0;
+        padding: 5px;
+    }
+    .userName {
+        max-width: 93.5%;
+    }
+    .name {
+        width: 45%;
+    }
+    .inputs:focus {
+        outline: none;
+        border: 2px solid #d9b85f;
+        color: white;
+    }
+</style>
 <script src="../../ressources/javascript/scripts.js"></script>
 <script>
 $(document).ready(function () {
@@ -70,12 +131,12 @@ $(document).ready(function () {
         let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
         $(".header").html(body);
         $(".pageName").text("Ajout de Livre");
-        $(".profilePicture").find("img").attr("src","../../ressources/userPictures/defaultUserProfile.png");
+        $(".searchBar").css("visibility", "hidden");
+        $(".addButton").css("display", "none");
+        $(".profilePicture").find("img").attr("src","../../ressources/userPictures/" + getUrlParameter('isLoggedIn'));
         headerListener();
     });
-
-    submitBook();
-
+    addBook();
 });
 </script>
 </html>

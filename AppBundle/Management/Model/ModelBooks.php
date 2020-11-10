@@ -1,10 +1,14 @@
 <?php
-
+require_once('ProjectConstants.php');
 
 class ModelBooks
 {
-    function initcap(string $text) : string{
-        return ucwords($text);
+    private $connexion;
+
+    public function __construct()
+    {
+        $constants = new ProjectConstants();
+        $this->connexion = $constants->getConnexion();
     }
 
     function generateIdBook($titre):string{
@@ -127,7 +131,7 @@ class ModelBooks
        $succes=false;
        try 
        {
-           $requete = "INSERT INTO book (id,title,author,category,description,available,price,owner) VALUES('$id', '$titre','$auteur','$categorie','$description','$disponible','$prix')"; 
+           $request = "INSERT INTO book (id,title,author,category,description,available,price,owner) VALUES('$id', '$titre','$auteur','$categorie','$description','$disponible','$prix')";
            $result = $this->connexion->query($request);
            $lines = $result->fetchAll();
 
@@ -146,7 +150,7 @@ class ModelBooks
    {
        try 
        {
-           $requete = "DELETE FROM book WHERE id='{$id}'"; 
+           $request = "DELETE FROM book WHERE id='{$id}'";
            $result = $this->connexion->query($request);
            echo "Suppression réussi";
            exit;

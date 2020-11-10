@@ -84,7 +84,6 @@ class EntityBooks
             return $lines;
         }
         catch(PDOException $e) {
-            echo "echec de connexion à la base de donnees: " . $e->getMessage();
             return $lines;
         }
     }
@@ -144,10 +143,9 @@ class EntityBooks
             $result = $this->connexion->query($request);
             $lines = $result->fetchAll();
 
-            return array($lines, $success);
+            return $lines;
         }
         catch(PDOException $e) {
-            echo "echec de connexion à la base de donnees: " . $e->getMessage();
             return $lines;
         }
     }
@@ -210,7 +208,6 @@ class EntityBooks
             return $lines;
         }
         catch(PDOException $e) {
-            echo "echec de connexion à la base de donnees: " . $e->getMessage();
             return $lines;
         }
     }
@@ -293,7 +290,6 @@ class EntityBooks
             return $lines;
         }
         catch(PDOException $e) {
-            echo "echec de connexion à la base de donnees: " . $e->getMessage();
             return $lines;
         }
     }
@@ -332,11 +328,7 @@ class EntityBooks
             return $lines;
         }
         catch(PDOException $e) {
-            echo "echec de connexion à la base de donnees: " . $e->getMessage();
             return $lines;
         }
     }
-
-
-
 }

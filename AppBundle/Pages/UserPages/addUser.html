@@ -13,7 +13,7 @@
     <div class="container">
         <div style="padding: 10px 0; font-size: 40px;">Création de compte</div><br>
         <div class="messages"></div>
-        <form action="../../Management/addUser.php" method="post" enctype="multipart/form-data">
+        <form>
             <div class="mainForm">
                 <div id="left">
                     <label class="labels">Nom</label>
@@ -28,13 +28,13 @@
                         <input class="inputs name" id="lastName" name="lastName" type="text" placeholder="Nom" required aria-required="true" aria-invalid="false">
                     </div>
                     <input class="inputs" id="email" name="email" type="text" placeholder="exemple@gmail.com" required aria-required="true" aria-invalid="false">
-                    <input class="inputs" id="phone" name="phone" type="tel" placeholder="(123) 456-7890" maxlength="14" pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}" required aria-required="true" aria-invalid="false">
+                    <input class="inputs" id="phone" name="phone" type="text" placeholder="(123) 456-7890" maxlength="14" required aria-required="true" aria-invalid="false">
                     <input class="inputs" id="password" name="password" type="password" required aria-required="true" aria-invalid="false">
                     <input class="inputs" id="passwordConfirm" name="passwordConfirm" type="password" required aria-required="true" aria-invalid="false">
                 </div>
             </div><br>
-            <button class="headerButton submitButton material-icons" style="margin-right: 15px;">done</button>
-            <button class="headerButton resetButton material-icons">clear</button>
+            <button class="headerButton submitButton material-icons" style="margin-right: 15px;" type="submit">done</button>
+            <button class="headerButton resetButton material-icons" type="reset">clear</button>
         </form>
     </div>
 </div>

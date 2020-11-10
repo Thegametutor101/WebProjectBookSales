@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3705c003-8ff2-443e-9a69-edc5f34c7954" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AppBundle/ressources/userPictures/1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/ressources/userPictures/16.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityBooks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Model/ModelUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Model/ModelUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/Management/addUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/addUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/addUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/connectUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/connectUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,12 +55,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/AppBundle/ressources/userPictures" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\ressources\userPictures" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\Management" />
       <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\Pages" />

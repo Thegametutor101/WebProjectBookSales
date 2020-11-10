@@ -1,5 +1,6 @@
 <?php
 require_once('ProjectConstants.php');
+require_once('Entity/EntityUsers.php');
 
 class ModelUsers
 {
@@ -11,23 +12,27 @@ class ModelUsers
         $this->connexion = $constants->getConnexion();
     }
 
-    function login(string $email, string $password): bool
+    function addUser(string $firstName, string $lastName, string $email, string $phone, string $password):bool
     {
-        $isSame = false;
-        try {
-            $request = "SELECT email, password FROM user";
-            $result = $this->connexion->query($request);
-            $lines = $result->fetchAll();
-            foreach ($lines as $line) {
-                if (($line['email'] === $email) && ($line['password'] === $password)) {
-                    $isSame = true;
-                }
+        $entityUsers = new EntityUsers();
+        try
+        {
+            if ($entityUsers->checkEmailUsed($email)) {
+                return false;
+            } else {
+                $requete = "INSERT INTO user (firstName, lastName, email, phone, password) 
+                        VALUES('$firstName', '$lastName', '$email', '$phone', '$password')";
+                $this->connexion->exec($requete);
+                $id = $entityUsers->getUserId($email);
+                $file = dirname(__FILE__) . '/../../ressources/userPictures/defaultUserProfile.png';
+                $newfile = dirname(__FILE__) . '/../../ressources/userPictures/' . $id . '.png';
+                copy($file, $newfile);
+                return true;
             }
-            return $isSame;
         }
         catch(PDOException $e) {
-            echo "echec de connexion à la base de donnees: " . $e->getMessage();
-            return $isSame;
+            return false;
         }
+
     }
 }

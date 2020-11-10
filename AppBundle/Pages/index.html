@@ -62,8 +62,10 @@ $(document).ready(function () {
         $(".header").html(body);
         $(".pageName").text("Accueil");
         $("#searchValue").focus();
-        if (getUrlParameter('isLoggedIn') === "0" || isNaN(getUrlParameter('isLoggedIn'))) {
+        $(".profilePicture").find("img").attr("src","../ressources/userPictures/" + getUrlParameter('isLoggedIn'));
+        if (isNaN(getUrlParameter('isLoggedIn'))) {
             $(".addButton").css("display", "none");
+            $(".profilePicture").find("img").attr("src","../ressources/userPictures/defaultUserProfile.png");
         }
         headerListener();
     });

@@ -1,6 +1,4 @@
 <?php
-
-
 require_once('ProjectConstants.php');
 
 class EntityUsers
@@ -13,33 +11,69 @@ class EntityUsers
         $this->connexion = $constants->getConnexion();
     }
 
-    function setNameCookie($email)
+    function login(string $email, string $password): bool
     {
+        $isSame = false;
+        try {
+            $request = "SELECT email, password FROM user";
+            $result = $this->connexion->query($request);
+            $lines = $result->fetchAll();
+            foreach ($lines as $line) {
+                if (($line['email'] === $email) && ($line['password'] === $password)) {
+                    $isSame = true;
+                }
+            }
+            return $isSame;
+        }
+        catch(PDOException $e) {
+            return $isSame;
+        }
+    }
+
+    function setNameCookie($email): array
+    {
+        $lines = array();
         try 
         {
-            $requete = "SELECT firstName, lastName FROM user WHERE email ='{$email}'"; 
-            $result = $this->connexion->query($requete);
+            $request = "SELECT id FROM user WHERE email ='{$email}'";
+            $result = $this->connexion->query($request);
             $lines = $result->fetchAll();
 
-            foreach ($lines as $line){
-                setcookie(
-                    "firstName",
-                    $line["firstName"],
-                    time() + (10 * 365 * 24 * 60 * 60)
-                  );
-                  setcookie(
-                    "lastName",
-                    $line["lastName"],
-                    time() + (10 * 365 * 24 * 60 * 60)
-                  );
-            }
-
-
-            exit;
-        } 
-
+            return $lines[0];
+        }
         catch(PDOException $e) {
-            echo "echec de connexion à la base de donnees: " . $e->getMessage();
+            return $lines;
+        }
+    }
+
+    function checkEmailUsed($email): bool
+    {
+        try
+        {
+            $request = "SELECT id FROM user WHERE email ='{$email}'";
+            $result = $this->connexion->query($request);
+            $lines = $result->fetchAll();
+            if (isset($lines[0][0])) {
+                return true;
+            }
+            return false;
+        }
+        catch(PDOException $e) {
+            return true;
+        }
+    }
+
+    function getUserId($email)
+    {
+        try
+        {
+            $request = "SELECT id FROM user WHERE email ='{$email}'";
+            $result = $this->connexion->query($request);
+            $lines = $result->fetchAll();
+            return $lines[0][0];
+        }
+        catch(PDOException $e) {
+            return 0;
         }
     }
 
