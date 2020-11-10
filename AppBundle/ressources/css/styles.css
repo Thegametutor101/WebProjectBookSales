@@ -5,6 +5,7 @@
   
   *{
     font-family: customFont;
+    color: white;
   }
 
 .main {
@@ -34,6 +35,16 @@
 .banner {
     display: flex;
     flex-direction: row;
+}
+
+.container_page{
+    background-color: #454545;
+    padding: 10%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-bottom: 25%;
+    margin-top: 0%;
+    padding-top: 2.5%;
 }
 .navButtons {
     width: 20%;
@@ -248,4 +259,13 @@
 .formButton:active {
     background-color: #e6c56c;
     color: white;
+}
+
+
+h2{
+    font-size: 40px;
+}
+
+.inputBook{
+    color: black;
 }

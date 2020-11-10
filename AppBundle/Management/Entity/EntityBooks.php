@@ -22,7 +22,6 @@ class EntityBooks
             return $lines;
         }
         catch(PDOException $e) {
-            echo "echec de connexion à la base de donnees: " . $e->getMessage();
             return $lines;
         }
     }
@@ -337,4 +336,7 @@ class EntityBooks
             return $lines;
         }
     }
+
+
+
 }

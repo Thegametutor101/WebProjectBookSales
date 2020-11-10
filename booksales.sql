@@ -2,8 +2,8 @@
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 206.167.140.56:8008
--- Generation Time: Oct 26, 2020 at 08:11 PM
+-- Host: 127.0.0.1:3308
+-- Generation Time: Nov 10, 2020 at 02:52 AM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
 
@@ -19,8 +19,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `420505ri_gr06`
+-- Database: `booksales`
 --
+
+DELIMITER $$
+--
+-- Functions
+--
+DROP FUNCTION IF EXISTS `initcap`$$
+CREATE DEFINER=`root`@`localhost` FUNCTION `initcap` (`x` VARCHAR(100)) RETURNS VARCHAR(100) CHARSET utf8 BEGIN
+SET @str='';
+SET @l_str='';
+WHILE x REGEXP ' ' DO
+SELECT SUBSTRING_INDEX(x, ' ', 1) INTO @l_str;
+SELECT SUBSTRING(x, LOCATE(' ', x)+1) INTO x;
+SELECT CONCAT(@str, ' ', CONCAT(UPPER(SUBSTRING(@l_str,1,1)),LOWER(SUBSTRING(@l_str,2)))) INTO @str;
+END WHILE;
+RETURN LTRIM(CONCAT(@str, ' ', CONCAT(UPPER(SUBSTRING(x,1,1)),LOWER(SUBSTRING(x,2)))));
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -38,16 +56,19 @@ CREATE TABLE IF NOT EXISTS `book` (
   `available` tinyint(1) NOT NULL,
   `price` double NOT NULL,
   `owner` int(20) NOT NULL,
+  `rentedBy` int(20) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `owner` (`owner`)
-)DEFAULT CHARSET=utf8mb4;
+  KEY `owner` (`owner`),
+  KEY `rentedBy` (`rentedBy`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `book`
 --
 
-INSERT INTO `book` (`id`, `title`, `author`, `category`, `description`, `available`, `price`, `owner`) VALUES
-('FabBMull120', 'FableHaven Tome 1 Le Sanctuaire Secret', 'Brandon Mull', 'Fantastique, aventure', 'Depuis des siècles, le créatures fantastiques les plus extraordinaires se cachent dans un refuge secret, à l\'abri du monde monderne.\r\nCe sanctuaire s\'appelle Fablehaven.\r\nKendra et Seth ignorent tout de ce lieu magique, dont leur grand-père est pourtant le gardien.\r\nUn jour, ils découvrent l\'incroyable vérité : la forêt qui les entoure est peuplée d\'êtres fabuleux - fées, géants, sorcières, montres, ogres, satyres, naïades...\r\nAujourd\'hui, l\'avenir de Fablehaven est menacé par l\'avènement de puissances maléfiques. Ainsi commence le combat des deux enfants contre le mal, pour protéger Fablehaven de la destruction, sauver leur famille... et rester en vie.', 1, 23.99, 1);
+INSERT INTO `book` (`id`, `title`, `author`, `category`, `description`, `available`, `price`, `owner`, `rentedBy`) VALUES
+('FabBMull120', 'FableHaven Tome 1 Le Sanctuaire Secret', 'Brandon Mull', 'Fantastique, aventure', 'Depuis des siècles, le créatures fantastiques les plus extraordinaires se cachent dans un refuge secret, à l\'abri du monde monderne.\r\nCe sanctuaire s\'appelle Fablehaven.\r\nKendra et Seth ignorent tout de ce lieu magique, dont leur grand-père est pourtant le gardien.\r\nUn jour, ils découvrent l\'incroyable vérité : la forêt qui les entoure est peuplée d\'êtres fabuleux - fées, géants, sorcières, montres, ogres, satyres, naïades...\r\nAujourd\'hui, l\'avenir de Fablehaven est menacé par l\'avènement de puissances maléfiques. Ainsi commence le combat des deux enfants contre le mal, pour protéger Fablehaven de la destruction, sauver leur famille... et rester en vie.', 1, 23.99, 1, 0),
+('FabBMull553', 'FableHaven Tome 2 Rise of the Evening Star', 'Brandon Mull', 'Fantastique, aventure', 'patato', 1, 26.99, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -64,14 +85,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `phone` varchar(14) NOT NULL,
   `password` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `firstName`, `lastName`, `email`, `phone`, `password`) VALUES
-(1, 'Daniel', 'Navarro', 'theendercraftgaming@gmail.com', '(819) 944-9576', '');
+(1, 'Daniel', 'Navarro', 'theendercraftgaming@gmail.com', '(819) 944-9576', 'Secret1234');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
