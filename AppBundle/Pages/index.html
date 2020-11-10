@@ -72,6 +72,7 @@ $(document).ready(function () {
         type: "POST",
         dataType: "json",
         success: function(result){
+            // console.log("lists" + result);
             printCards(result["lines"]);
             cardClick();
             formatBookCover();

@@ -19,10 +19,9 @@ class EntityBooks
             $result = $this->connexion->query($request);
             $lines = $result->fetchAll();
 
-            return $lines;
+            return utf8_decode($lines);
         }
         catch(PDOException $e) {
-            echo "echec de connexion à la base de donnees: " . $e->getMessage();
             return $lines;
         }
     }

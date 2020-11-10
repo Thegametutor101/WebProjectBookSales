@@ -1,4 +1,7 @@
 <?php
+require_once('EntityBooks.php');
+require_once('ModelBooks.php');
+
 
   $id = 1;
   $titre = $_POST["titleBook"];

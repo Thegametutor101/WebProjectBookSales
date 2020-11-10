@@ -42,9 +42,10 @@ function connectAccount() {
                     $(".messages").empty();
                     $(".messages").append("<div>Veuillez entrer des données valides.</div><br><hr>")
                 }
+
             },
             error: function (message, er) {
-                console.log("downloading book list: " + er);
+                console.log("login: " + er);
             }
         });
     });
