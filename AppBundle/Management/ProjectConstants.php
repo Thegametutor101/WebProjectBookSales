@@ -17,3 +17,5 @@ class ProjectConstants
     {
         return $this->connexion;
     }
+
+}

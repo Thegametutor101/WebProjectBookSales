@@ -1,8 +1,6 @@
 <?php
-require_once('Entity/EntityBooks.php');
 require_once('Model/ModelBooks.php');
 
-$entityBook = new EntityBooks();
 $modelBook = new ModelBooks();
 
   $id="a";
@@ -14,10 +12,12 @@ $modelBook = new ModelBooks();
   $prix = $_POST["priceBook"];
   $succesAjout=false;
 
-  if($modelBook->verifyAllAttributeBook($titre,$auteur,$categorie,$description,$prix)=true){
+  echo $modelBook->verifyAllAttributeBook($titre,$auteur,$categorie,$description,$prix);
+
+  if($modelBook->verifyAllAttributeBook($titre,$auteur,$categorie,$description,$prix)){
     $id = $modelBook->generateIdBook($titre);
     $owner =  $_COOKIE["firstName"]." ".$lastName=$_COOKIE["lastName"];
-    $succesAjout=$entityBook->addBook($id,$titre,$auteur,$categorie,$description,$disponible,$prix,$owner);
+    $succesAjout=$modelBook->addBook($id,$titre,$auteur,$categorie,$description,$disponible,$prix,$owner);
   }
 
 
@@ -64,14 +64,14 @@ if ($succes=true){
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
       $modelBook->displayAlertBoxError("Désolé, une erreur est survenu lors du téléversement du fichier");
-      $entityBook->removeBook($id);
+      $modelBook->removeBook($id);
     // if everything is ok, try to upload file
     } else {
       if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
       } else {
         $modelBook->displayAlertBoxError("Désolé, une erreur est survenu lors du téléversement du fichier");
-        $entityBook->removeBook($id);
+        $modelBook->removeBook($id);
       }
     }
     

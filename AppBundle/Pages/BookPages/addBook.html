@@ -11,7 +11,7 @@
 <div class="main">
     <div class="header"></div>
     <div class="container_page">
-        <p class="paragraphe_titre">Ajouter un livre</p>
+        <h2>Ajouter un livre</h2>
         <form action="../../Management/addBook.php" method="post" class="formulaire">
 
                 <label for="titleBook">Titre du livre</label><br>
@@ -21,33 +21,33 @@
                 <input class="inputBook" type="text" id="authorBook" name="authorBook"><br><br>
 
                 <label  for="categoryBook">Catégorie</label><br>
-                <select id="categoryBook" name="categoryBook">
-                    <option value="administration">Administration</option>
-                    <option value="art">Art</option>
-                    <option value="architecture">Architecture</option>
-                    <option value="communication">Communication</option>
-                    <option value="economie">Économie</option>
-                    <option value="education physique">Éducation physique</option>
-                    <option value="francais">Français</option>
-                    <option value="geographie">Géographie</option>
-                    <option value="histoire">Histoire</option>
-                    <option value="Legal">Légal</option>
-                    <option value="mathematique">Mathématique</option>
-                    <option value="medical">Médical</option>
-                    <option value="musique">Musique</option>
-                    <option value="philosophie">Philosophie</option>
-                    <option value="Technologie">Technologie</option>
-                    <option value="Théatre">Theatre</option>
-                    <option value="Autre">Autre</option>
+                <select  id="categoryBook" class="inputBook" name="categoryBook">
+                    <option class="inputBook" value="administration">Administration</option>
+                    <option class="inputBook" value="art">Art</option>
+                    <option  class="inputBook" value="architecture">Architecture</option>
+                    <option  class="inputBook" value="communication">Communication</option>
+                    <option  class="inputBook" value="economie">Économie</option>
+                    <option  class="inputBook" value="education physique">Éducation physique</option>
+                    <option  class="inputBook" value="francais">Français</option>
+                    <option  class="inputBook" value="geographie">Géographie</option>
+                    <option  class="inputBook" value="histoire">Histoire</option>
+                    <option class="inputBook"  value="Legal">Légal</option>
+                    <option  class="inputBook" value="mathematique">Mathématique</option>
+                    <option  class="inputBook" value="medical">Médical</option>
+                    <option  class="inputBook" value="musique">Musique</option>
+                    <option class="inputBook"  value="philosophie">Philosophie</option>
+                    <option class="inputBook"  value="Technologie">Technologie</option>
+                    <option class="inputBook"  value="Théatre">Theatre</option>
+                    <option class="inputBook" value="Autre">Autre</option>
                   </select><br><br>
 
                 <label  for="descriptBook">Decription</label><br>
                 <input class="inputBook" type="text" id="descriptBook" name="descriptBook"><br><br>
 
                 <label  for="availableBook">Est-ce que ce livre est disponible pour la vente?</label><br>
-                <select id="availableBook" name="availableBook">
-                    <option value="1">Oui</option>
-                    <option value="0">Non</option>
+                <select class="inputBook"  id="availableBook" name="availableBook">
+                    <option class="inputBook" value="1">Oui</option>
+                    <option class="inputBook" value="0">Non</option>
                   </select><br><br>
 
                 <label  for="priceBook">Prix de vente</label><br>
@@ -73,6 +73,9 @@ $(document).ready(function () {
         $(".profilePicture").find("img").attr("src","../../ressources/userPictures/defaultUserProfile.png");
         headerListener();
     });
+
+    submitBook();
+
 });
 </script>
 </html>
