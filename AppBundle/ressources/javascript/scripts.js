@@ -14,7 +14,6 @@ let getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
-
 function connectAccount() {
     $(".loginButton").click(function (e) {
         e.preventDefault();
@@ -50,6 +49,67 @@ function connectAccount() {
     });
     $(".createAccountButton").click(function () {
         window.location.href = baseUrl + "/Pages/UserPages/addUser.html";
+    });
+}
+function addUser() {
+    $("#phone").keypress(function(event){
+        let keycode = event.keyCode || event.charCode;
+        let value = $("#phone").val();
+        let length = $("#phone").val().length;
+        if (keycode != 8 && keycode != 46) {
+            if (length === 4 && (value.substr(2,) !== ")")) {
+                $("#phone").val("(" + value.substr(0, 3) + ") " + value.substr(3));
+            }
+            if (length === 10 && value.substr(9) !== "-") {
+                $("#phone").val(value.substr(0, 9) + "-" + value.substr(9));
+            }
+        } else {
+            console.log("ok");
+            if (length === 5) {
+                $("#phone").val("(" + value.substr(0, 3) + ") " + value.substr(3));
+            }
+            if (length === 11) {
+                $("#phone").val(value.substr(0, 9) + value.substr(10, 1));
+            }
+        }
+    });
+    $(".submitButton").click(function (e) {
+        e.preventDefault();
+        let firstName = $("#firstName").val();
+        let lastName = $("#lastName").val();
+        let email = $("#email").val();
+        let phone = $("#phone").val();
+        let password = $("#password").val();
+        let passwordConfirm = $("#passwordConfirm").val();
+        let values = {
+            "firstName": firstName,
+            "lastName": lastName,
+            "email": email,
+            "phone": phone,
+            "password": password,
+            "passwordConfirm": passwordConfirm
+        }
+        $.ajax({
+            url: "../../Management/addUser.php",
+            type: "POST",
+            data: values,
+            dataType: "json",
+            success: function(result){
+                if (result["message"] === "ok") {
+                    window.location.href = baseUrl + "/Pages/index.html?isLoggedIn=1";
+                } else if (result["message"] === "no") {
+                    $(".messages").empty();
+                    $(".messages").append("<div>Courriel ou mot de passe invalide.</div><br><hr>")
+                }
+            },
+            error: function (message, er) {
+                console.log("downloading book list: " + er);
+            }
+        });
+    });
+    $(".resetButton").click(function (e) {
+        e.preventDefault();
+        $(".inputs").val("");
     });
 }
 function headerListener() {

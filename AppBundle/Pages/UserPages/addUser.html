@@ -20,21 +20,21 @@
                     <label class="labels" for="email">Email</label>
                     <label class="labels" for="phone">Téléphone</label>
                     <label class="labels" for="password">Mot de passe</label>
-                    <label class="labels" for="passwordConfirm">Veuillez confirmer le mot de passe</label>
+                    <label class="labels" for="passwordConfirm">Confirmer</label>
                 </div>
                 <div id="right">
                     <div class="userName">
-                        <input class="inputs name" id="firstName" name="firstName" type="text" autofocus required aria-required="true" aria-invalid="false">
-                        <input class="inputs name" id="lastName" name="lastName" type="text" required aria-required="true" aria-invalid="false">
+                        <input class="inputs name" id="firstName" name="firstName" type="text" placeholder="Prénom" autofocus required aria-required="true" aria-invalid="false">
+                        <input class="inputs name" id="lastName" name="lastName" type="text" placeholder="Nom" required aria-required="true" aria-invalid="false">
                     </div>
-                    <input class="inputs" id="email" name="email" type="text">
-                    <input class="inputs" id="phone" name="phone" type="text">
-                    <input class="inputs" id="password" name="password" type="password">
-                    <input class="inputs" id="passwordConfirm" name="passwordConfirm" type="password">
+                    <input class="inputs" id="email" name="email" type="text" placeholder="exemple@gmail.com" required aria-required="true" aria-invalid="false">
+                    <input class="inputs" id="phone" name="phone" type="tel" placeholder="(123) 456-7890" maxlength="14" pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}" required aria-required="true" aria-invalid="false">
+                    <input class="inputs" id="password" name="password" type="password" required aria-required="true" aria-invalid="false">
+                    <input class="inputs" id="passwordConfirm" name="passwordConfirm" type="password" required aria-required="true" aria-invalid="false">
                 </div>
             </div><br>
-            <input class="inputUser headerButton" type="submit" value="Valider">
-            <input class="inputUser headerButton" type="reset" value="Effacer">
+            <button class="headerButton submitButton material-icons" style="margin-right: 15px;">done</button>
+            <button class="headerButton resetButton material-icons">clear</button>
         </form>
     </div>
 </div>
@@ -66,8 +66,8 @@
         width: 75%;
     }
     .labels {
-        margin-top: 5px;
-        height: 50%;
+        margin-top: 10px;
+        height: 100%;
         text-align: left;
     }
     .inputs {
@@ -107,5 +107,6 @@
             $(".profilePicture").css("display", "none");
             headerListener();
         });
+        addUser();
     });
 </script>
