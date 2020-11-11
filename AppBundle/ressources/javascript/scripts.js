@@ -111,15 +111,15 @@ function addUser() {
                     });
                 } else {
                     $(".messages").empty();
-                    $(".messages").append("<div>Veuillez confirmer votre mot de passe.</div><br><hr>")
+                    $(".messages").append("<div>Veuillez confirmer votre mot de passe.</div><br><hr>");
                 }
             } else {
                 $(".messages").empty();
-                $(".messages").append("<div>Veuillez entrer et confirmer votre mot de passe.</div><br><hr>")
+                $(".messages").append("<div>Veuillez entrer et confirmer votre mot de passe.</div><br><hr>");
             }
         } else {
             $(".messages").empty();
-            $(".messages").append("<div>Veuillez entrer un téléphone valide.</div><br><hr>")
+            $(".messages").append("<div>Veuillez entrer un téléphone valide.</div><br><hr>");
         }
     });
     $(".resetButton").click(function (e) {
@@ -127,7 +127,57 @@ function addUser() {
     });
 }
 function addBook() {
-
+    $(".submitButton").click(function (e) {
+        e.preventDefault();
+        let RegExpression = /^[a-zA-Z,\s\x00-\x7F-_]*$/;
+        let title = $("#title").val();
+        let author = $("#author").val();
+        let category = $("#category").val();
+        let description = $("#description").val();
+        let price = $("#price").val();
+        let cover = new FormData();
+        let files = $('#cover')[0].files;
+        if (title.length < 1) {
+            if (category.length ) {
+                if ($("#availableBookYes").is(':checked') || $("#availableBookNo").is(':checked')) {
+                    let available = false;
+                    if ($("#availableBookYes").is(':checked')) {
+                        available = true;
+                    }
+                    if(files.length > 0 ) {
+                        cover.append('image', files[0]);
+                        let values = {
+                            "title": title,
+                            "author": author,
+                            "category": category,
+                            "description": description,
+                            "available": available,
+                            "price": price,
+                            "cover": cover
+                        };
+                    } else {
+                        $(".messages").empty();
+                        $(".messages").append("<div>Veuillez choisir une image de couverture.</div><br><hr>");
+                    }
+                } else {
+                    $(".messages").empty();
+                    $(".messages").append("<div>Veuillez choisir la disponibilitée du livre.</div><br><hr>");
+                }
+            } else {
+                $(".messages").empty();
+                $(".messages").append("<div>Veuillez choisir une catégorie.</div><br><hr>");
+            }
+        } else {
+            $(".messages").empty();
+            $(".messages").append("<div>Veuillez entrez un titre.</div><br><hr>");
+        }
+    });
+    $(".resetButton").click(function (e) {
+        $(".inputs").val("");
+        $("#categoryBook").val("0");
+        $("#availableBookYes").prop('checked', false);
+        $("#availableBookNo").prop('checked', false);
+    });
 }
 function headerListener() {
     $('.addButton').click(function () {
