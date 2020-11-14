@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3705c003-8ff2-443e-9a69-edc5f34c7954" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/FabBMull664.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/addBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/addBook.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/userPictures/16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booksales.sql" beforeDir="false" afterPath="$PROJECT_DIR$/booksales.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +85,10 @@
       <workItem from="1604581903797" duration="17376000" />
       <workItem from="1605046072648" duration="989000" />
       <workItem from="1605120101334" duration="7206000" />
+      <workItem from="1605209123457" duration="9192000" />
+      <workItem from="1605377931986" duration="291000" />
+      <workItem from="1605378357640" duration="13000" />
+      <workItem from="1605378611011" duration="9473000" />
     </task>
     <servers />
   </component>
@@ -123,13 +131,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="654" y="142" key="ftp.server.browser/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1603905043874" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1604942448434">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1605383643842">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1604942448434" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1604590621832">
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1605383643842" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1605386522468">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1604590621832" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1605386522468" />
   </component>
 </project>

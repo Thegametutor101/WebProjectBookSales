@@ -1,4 +1,5 @@
 let getUrl = window.location;
+// let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1] + "/" + getUrl.pathname.split('/')[2] + "/" + getUrl.pathname.split('/')[3] + "/" + getUrl.pathname.split('/')[4];
 let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1] + "/" + getUrl.pathname.split('/')[2];
 
 
@@ -129,43 +130,74 @@ function addUser() {
 function addBook() {
     $(".submitButton").click(function (e) {
         e.preventDefault();
-        let RegExpression = /^[a-zA-Z,\s\x00-\x7F-_]*$/;
-        let title = $("#title").val();
-        let author = $("#author").val();
-        let category = $("#category").val();
-        let description = $("#description").val();
-        let price = $("#price").val();
-        let cover = new FormData();
+        let regex = /[^a-z0-9 _.'éèêûîâàçïëöä:;,?!-]/gi;
+        let title = $("#title").val().replace(regex, '');
+        let author = $("#author").val().replace(regex, '');
+        let category = $("#category").val().replace(/[^a-z0-9 ,'éèêûîâàçïëöä]/gi, ',');
+        let description = $("#description").val().replace(regex, '');
+        let price = parseFloat($("#price").val().replace(/[^0-9.]/gi, ',')).toFixed(2);
+        let formData = new FormData();
         let files = $('#cover')[0].files;
-        if (title.length < 1) {
-            if (category.length ) {
-                if ($("#availableBookYes").is(':checked') || $("#availableBookNo").is(':checked')) {
-                    let available = false;
-                    if ($("#availableBookYes").is(':checked')) {
-                        available = true;
-                    }
-                    if(files.length > 0 ) {
-                        cover.append('image', files[0]);
-                        let values = {
-                            "title": title,
-                            "author": author,
-                            "category": category,
-                            "description": description,
-                            "available": available,
-                            "price": price,
-                            "cover": cover
-                        };
+        if (title.length > 1) {
+            if (author.length > 1) {
+                if (category.length > 1) {
+                    if ($("#availableBookYes").is(':checked') || $("#availableBookNo").is(':checked')) {
+                        let available = 0;
+                        if ($("#availableBookYes").is(':checked')) {
+                            available = 1;
+                        }
+                        if (!isNaN(price)) {
+                            if(files.length > 0 ) {
+                                formData.append('title', title);
+                                formData.append('author', author);
+                                formData.append('category', category);
+                                formData.append('description', description);
+                                formData.append('available', available);
+                                formData.append('price', price);
+                                formData.append('cover', files[0]);
+                                formData.append('owner', getUrlParameter('isLoggedIn'));
+                                $.ajax({
+                                    url: "../../Management/addBook.php",
+                                    type: "POST",
+                                    data: formData,
+                                    cache: false,
+                                    contentType: false,
+                                    processData: false,
+                                    dataType: "json",
+                                    success: function(result){
+                                        if (result["message"] === "ok") {
+                                            window.location.href = baseUrl + "/Pages/index.html?isLoggedIn=" + getUrlParameter('isLoggedIn');
+                                        } else if (result["message"] === "no") {
+                                            $(".messages").empty();
+                                            $(".messages").append("<div>Une erreur est survenue lors de l'ajout du livre.</div><br><hr>")
+                                        } else if (result["message"] === "file error") {
+                                            $(".messages").empty();
+                                            $(".messages").append("<div>Une erreur est survenue lors de l'ajout de l'image de couverture.</div><br><hr>")
+                                        }
+                                    },
+                                    error: function (message, er) {
+                                        console.log("downloading book list: " + message);
+                                    }
+                                });
+                            } else {
+                                $(".messages").empty();
+                                $(".messages").append("<div>Veuillez choisir une image de couverture.</div><br><hr>");
+                            }
+                        } else {
+                            $(".messages").empty();
+                            $(".messages").append("<div>Veuillez entrer un prix valide.</div><br><hr>");
+                        }
                     } else {
                         $(".messages").empty();
-                        $(".messages").append("<div>Veuillez choisir une image de couverture.</div><br><hr>");
+                        $(".messages").append("<div>Veuillez choisir la disponibilitée du livre.</div><br><hr>");
                     }
                 } else {
                     $(".messages").empty();
-                    $(".messages").append("<div>Veuillez choisir la disponibilitée du livre.</div><br><hr>");
+                    $(".messages").append("<div>Veuillez choisir une catégorie.</div><br><hr>");
                 }
             } else {
                 $(".messages").empty();
-                $(".messages").append("<div>Veuillez choisir une catégorie.</div><br><hr>");
+                $(".messages").append("<div>Veuillez entrez un autheur.</div><br><hr>");
             }
         } else {
             $(".messages").empty();

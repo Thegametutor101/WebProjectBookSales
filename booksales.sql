@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Nov 10, 2020 at 02:52 AM
+-- Generation Time: Nov 14, 2020 at 05:48 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
 
@@ -19,26 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `booksales`
+-- Database: `420505ri_gr06`
 --
-
-DELIMITER $$
---
--- Functions
---
-DROP FUNCTION IF EXISTS `initcap`$$
-CREATE DEFINER=`root`@`localhost` FUNCTION `initcap` (`x` VARCHAR(100)) RETURNS VARCHAR(100) CHARSET utf8 BEGIN
-SET @str='';
-SET @l_str='';
-WHILE x REGEXP ' ' DO
-SELECT SUBSTRING_INDEX(x, ' ', 1) INTO @l_str;
-SELECT SUBSTRING(x, LOCATE(' ', x)+1) INTO x;
-SELECT CONCAT(@str, ' ', CONCAT(UPPER(SUBSTRING(@l_str,1,1)),LOWER(SUBSTRING(@l_str,2)))) INTO @str;
-END WHILE;
-RETURN LTRIM(CONCAT(@str, ' ', CONCAT(UPPER(SUBSTRING(x,1,1)),LOWER(SUBSTRING(x,2)))));
-END$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -48,11 +30,11 @@ DELIMITER ;
 
 DROP TABLE IF EXISTS `book`;
 CREATE TABLE IF NOT EXISTS `book` (
-  `id` varchar(200) NOT NULL,
-  `title` varchar(150) NOT NULL,
-  `author` varchar(202) NOT NULL,
-  `category` varchar(50) NOT NULL,
-  `description` text NOT NULL,
+  `id` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `title` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
+  `author` varchar(202) COLLATE utf8mb4_general_ci NOT NULL,
+  `category` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `description` text COLLATE utf8mb4_general_ci NOT NULL,
   `available` tinyint(1) NOT NULL,
   `price` double NOT NULL,
   `owner` int(20) NOT NULL,
@@ -60,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `book` (
   PRIMARY KEY (`id`),
   KEY `owner` (`owner`),
   KEY `rentedBy` (`rentedBy`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `book`
@@ -79,13 +61,13 @@ INSERT INTO `book` (`id`, `title`, `author`, `category`, `description`, `availab
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(20) NOT NULL AUTO_INCREMENT,
-  `firstName` varchar(100) NOT NULL,
-  `lastName` varchar(100) NOT NULL,
-  `email` varchar(150) NOT NULL,
-  `phone` varchar(14) NOT NULL,
-  `password` varchar(200) NOT NULL,
+  `firstName` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `lastName` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
+  `phone` varchar(14) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `user`
