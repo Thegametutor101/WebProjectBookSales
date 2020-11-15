@@ -25,6 +25,21 @@ class EntityBooks
             return $lines;
         }
     }
+
+    function getBookById($id)
+    {
+        $lines = array();
+        try {
+            $request = "SELECT * FROM book where id='$id'";
+            $result = $this->connexion->query($request);
+            $lines = $result->fetchAll();
+
+            return $lines;
+        }
+        catch(PDOException $e) {
+            return $lines;
+        }
+    }
     function getBooksSearchByTitle($text, $sort):array
     {
         $lines = array();

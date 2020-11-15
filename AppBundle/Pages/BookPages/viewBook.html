@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../ressources/css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="main">
+    <div class="header"></div>
+    <div class="container">
+        <div class="messages"></div>
+        <div class="mainForm">
+            <div id="left">
+                <img id="bookCover" src="../../ressources/bookPictures/" style="height: 550px">
+            </div>
+            <div id="right">
+                <div class="top">
+                    <div style="padding: 10px 0; font-size: 15px;" id="BookId"></div>
+                    <div style="padding: 10px 0; font-size: 18px;" id="title"></div>
+                    <div style="padding: 10px 0; font-size: 18px;" id="author"></div>
+                    <div style="padding: 10px 0; font-size: 18px;" id="category"></div>
+                    <div style="padding: 10px 0; font-size: 18px;" id="description"></div>
+                </div>
+                <div class="bottom">
+                    <div style="padding: 10px 15px 10px 0; font-size: 30px;color: crimson" id="price"></div>
+                    <button class="headerButton buyButton" name="buy" style="width: auto">Acheter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<style>
+    .container {
+        max-width: 60%;
+        width: 60%;
+        padding: 15px 5%;
+        margin: 15px 15%;
+        background-color: #404040;
+    }
+    .messages {
+        width: 100%;
+    }
+    .mainForm {
+        display: flex;
+        flex-direction: row;
+        height: 550px;
+    }
+    #left {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+    }
+    #right {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        height: 100%;
+    }
+    .top {
+        height: 90%;
+        text-align: left;
+        padding-left: 25px
+    }
+    .bottom {
+        height: 10%;
+        padding-left: 65%;
+        display: flex;
+        flex-direction: row;
+    }
+    .pageName {
+        width: 70%;
+        text-align: center;
+    }
+    .userAndPageName {
+        width: 80%;
+    }
+    .profilePicture {
+        width: 5%;
+    }
+</style>
+<script src="../../ressources/javascript/scripts.js"></script>
+<script>
+    $(document).ready(function () {
+        $.get("../header.html", function (data) {
+            let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
+            $(".header").html(body);
+            $(".pageName").text(getUrlParameter('title'));
+            $(".searchBar").css("display", "none");
+            $(".profilePicture").find("img").attr("src","../../ressources/userPictures/" + getUrlParameter('isLoggedIn'));
+            if (isNaN(getUrlParameter('isLoggedIn'))) {
+                $(".addButton").css("display", "none");
+                $(".profilePicture").find("img").attr("src","../../ressources/userPictures/defaultUserProfile.png");
+            }
+            headerListener();
+        });
+        $('#BookId').text(getUrlParameter('id'));
+        $('#bookCover').attr("src", "../../ressources/bookPictures/" + getUrlParameter('id'));
+        $('Title').text(getUrlParameter('title'));
+        $.ajax({
+            url: "../../Management/getBook.php",
+            type: "POST",
+            data: {
+                "id": getUrlParameter('id')
+            },
+            dataType: "json",
+            success: function(result){
+                let book = result['book'][0];
+                $("#title").html("<strong style='font-size: 20px'>Titre: </strong>" + book[1])
+                $("#author").html("<strong style='font-size: 20px'>Autheur: </strong>" + book[2])
+                $("#category").html("<strong style='font-size: 20px'>Catégories: </strong>" + book[3])
+                $("#description").html("<strong style='font-size: 20px'>Description: </strong>" + book[4])
+                $("#price").text(book[6] + "$")
+            },
+            error: function (message, er) {
+                console.log("fetching book: " + message);
+            }
+        });
+        buyBook();
+    });
+</script>
+</html>

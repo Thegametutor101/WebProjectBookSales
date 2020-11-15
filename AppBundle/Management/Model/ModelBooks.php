@@ -21,7 +21,7 @@ class ModelBooks
                return "file error";
            } else {
                $request = "INSERT INTO book VALUES('$id', '$title', '$author', '$category',
-                        '$description', '$available', '$price', '$owner', '0')";
+                        '$description', '$available', '$price', '$owner')";
                $this->connexion->exec($request);
                return "ok";
            }
@@ -30,10 +30,9 @@ class ModelBooks
            return "no";
        }
    }
-
-   function removeBook($id): bool
-   {
-       try 
+    function removeBook($id): bool
+    {
+       try
        {
            $request = "DELETE FROM book WHERE id='{$id}'";
            $this->connexion->exec($request);
@@ -42,6 +41,31 @@ class ModelBooks
        catch(PDOException $e) {
            return false;
        }
-   }
-
+    }
+    function addRental($bookID, $userID): bool
+    {
+        try
+        {
+            $request = "INSERT INTO rentals(bookID, userID) VALUES('$bookID', '$userID')";
+            $this->connexion->exec($request);
+            if (!$this->updateAvailable($bookID)) {
+                return false;
+            }
+            return true;
+        }
+        catch(PDOException $e) {
+            return false;
+        }
+    }
+    function updateAvailable($id): bool
+    {
+        try {
+            $request = "UPDATE book SET available='0' WHERE id='$id'";
+            $this->connexion->exec($request);
+            return true;
+        }
+        catch (PDOException $e) {
+            return false;
+        }
+    }
 }

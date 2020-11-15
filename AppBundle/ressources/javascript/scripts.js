@@ -225,7 +225,6 @@ function headerListener() {
         } else {
             window.location.href = baseUrl + "/Pages/index.html?isLoggedIn=" + getUrlParameter('isLoggedIn');
         }
-
     });
     $('.profilePicture').click(function () {
         if (isNaN(getUrlParameter('isLoggedIn'))) {
@@ -266,29 +265,48 @@ function headerListener() {
                 console.log("downloading book list: " + message);
             }
         });
-
-
+    });
+}
+function buyBook() {
+    $(".buyButton").click(function () {
+        if (isNaN(getUrlParameter('isLoggedIn'))) {
+            window.location.href = baseUrl + "/Pages/UserPages/connectUser.html";
+        } else {
+            let values = {
+                "bookID": getUrlParameter('id'),
+                "userID": getUrlParameter('isLoggedIn')
+            };
+            $.ajax({
+               url: "../../Management/rentBook.php",
+               type: "POST",
+               data: values,
+               dataType: "json",
+               success:function (result) {
+                    if (result['message'] === "ok") {
+                        window.location.href = baseUrl + "/Pages/index.html?isLoggedIn=" + getUrlParameter('isLoggedIn');
+                    } else if (result['message'] === "no") {
+                        $(".messages").empty();
+                        $(".messages").append("<div>Une erreur c'est produite lors de la requête.</div><br><hr>")
+                    }
+               },
+                error:function (message, er) {
+                   console.log("erreur lors de l'emprunt: " + message);
+                }
+            });
+        }
     });
 }
 function cardClick()
 {
     $('.card').click(function(){
-        // let item = $(this).find(".id").text();
-        // if (confirm("Voullez vous vraiment supprimer la formation : " + item)) {
-        //     // window.location.href = "index.html?formationID=" + item.substr(1, item.length);
-        //     console.log("ded");
-        // }
+        let id = $(this).find(".id").text();
+        let title = $(this).find(".title").text();
+        if (isNaN(getUrlParameter('isLoggedIn'))) {
+            window.location.href = baseUrl + "/Pages/BookPages/viewBook.html?id=" + id + "&title=" + title;
+        } else {
+            window.location.href = baseUrl + "/Pages/BookPages/viewBook.html?isLoggedIn=" + getUrlParameter('isLoggedIn') + "&id=" + id + "&title=" + title;
+        }
     });
-}
-function readCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
 }
 function printCards(list) {
     console.log("downloading book list: success");

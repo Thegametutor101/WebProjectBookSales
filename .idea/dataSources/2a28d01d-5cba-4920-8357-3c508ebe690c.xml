@@ -9,7 +9,7 @@
     </root>
     <schema id="2" parent="1" name="booksales">
       <Current>1</Current>
-      <Collation>utf8mb4_0900_ai_ci</Collation>
+      <Collation>utf8mb4_general_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="contactapp">
       <Collation>utf8mb4_0900_ai_ci</Collation>
@@ -920,13 +920,13 @@ SELECT|sys.sys_config:null
 APPLICATION_PASSWORD_ADMIN,AUDIT_ADMIN,BACKUP_ADMIN,BINLOG_ADMIN,BINLOG_ENCRYPTION_ADMIN,CLONE_ADMIN,CONNECTION_ADMIN,ENCRYPTION_KEY_ADMIN,GROUP_REPLICATION_ADMIN,INNODB_REDO_LOG_ARCHIVE,PERSIST_RO_VARIABLES_ADMIN,REPLICATION_APPLIER,REPLICATION_SLAVE_ADMIN,RESOURCE_GROUP_ADMIN,RESOURCE_GROUP_USER,ROLE_ADMIN,SERVICE_CONNECTION_ADMIN,SESSION_VARIABLES_ADMIN,SET_USER_ID,SYSTEM_USER,SYSTEM_VARIABLES_ADMIN,TABLE_ENCRYPTION_ADMIN,XA_RECOVER_ADMIN!
 </ObjectGrants>
     </user>
-    <table id="288" parent="2" name="book"/>
-    <table id="289" parent="2" name="user"/>
-    <routine id="290" parent="2" name="initcap">
-      <SourceTextLength>352</SourceTextLength>
-      <Definer>root@localhost</Definer>
-      <RoutineKind>function</RoutineKind>
-    </routine>
+    <table id="288" parent="2" name="book">
+      <Collation>utf8_general_ci</Collation>
+    </table>
+    <table id="289" parent="2" name="rentals"/>
+    <table id="290" parent="2" name="user">
+      <Collation>utf8_general_ci</Collation>
+    </table>
     <column id="291" parent="288" name="id">
       <Position>1</Position>
       <DataType>varchar(200)|0s</DataType>
@@ -978,47 +978,61 @@ APPLICATION_PASSWORD_ADMIN,AUDIT_ADMIN,BACKUP_ADMIN,BINLOG_ADMIN,BINLOG_ENCRYPTI
     </key>
     <column id="301" parent="289" name="id">
       <Position>1</Position>
-      <DataType>int(20)|0s</DataType>
+      <DataType>int(255)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="302" parent="289" name="firstName">
+    <column id="302" parent="289" name="bookID">
       <Position>2</Position>
-      <DataType>varchar(100)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="303" parent="289" name="lastName">
-      <Position>3</Position>
-      <DataType>varchar(100)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="304" parent="289" name="email">
-      <Position>4</Position>
-      <DataType>varchar(150)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="305" parent="289" name="phone">
-      <Position>5</Position>
-      <DataType>varchar(14)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="306" parent="289" name="password">
-      <Position>6</Position>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
+      <Collation>utf8_general_ci</Collation>
     </column>
-    <key id="307" parent="289" name="PRIMARY">
+    <column id="303" parent="289" name="userID">
+      <Position>3</Position>
+      <DataType>int(100)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="304" parent="289" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <argument id="308" parent="290">
-      <ArgumentDirection>R</ArgumentDirection>
-      <DataType>varchar(100)|0s</DataType>
-    </argument>
-    <argument id="309" parent="290" name="x">
+    <column id="305" parent="290" name="id">
       <Position>1</Position>
+      <DataType>int(100)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="306" parent="290" name="firstName">
+      <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
-    </argument>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="307" parent="290" name="lastName">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="308" parent="290" name="email">
+      <Position>4</Position>
+      <DataType>varchar(150)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="309" parent="290" name="phone">
+      <Position>5</Position>
+      <DataType>varchar(14)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="310" parent="290" name="password">
+      <Position>6</Position>
+      <DataType>varchar(200)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="311" parent="290" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

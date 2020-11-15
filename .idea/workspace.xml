@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3705c003-8ff2-443e-9a69-edc5f34c7954" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/FabBMull664.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Management/getBook.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Management/rentBook.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/viewBook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2a28d01d-5cba-4920-8357-3c508ebe690c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2a28d01d-5cba-4920-8357-3c508ebe690c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2a28d01d-5cba-4920-8357-3c508ebe690c/storage_v2/_src_/schema/booksales.w3fBeQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2a28d01d-5cba-4920-8357-3c508ebe690c/storage_v2/_src_/schema/booksales.w3fBeQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityBooks.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/addBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/addBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booksales.sql" beforeDir="false" afterPath="$PROJECT_DIR$/booksales.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booksales.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +92,8 @@
       <workItem from="1605209123457" duration="9192000" />
       <workItem from="1605377931986" duration="291000" />
       <workItem from="1605378357640" duration="13000" />
-      <workItem from="1605378611011" duration="9473000" />
+      <workItem from="1605378611011" duration="9686000" />
+      <workItem from="1605388710282" duration="8483000" />
     </task>
     <servers />
   </component>
@@ -115,10 +120,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="135" key="NewPhpClassDialog/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1604001452527" />
-    <state x="786" y="358" key="NewPhpFileDialog" timestamp="1604947267955">
+    <state x="786" y="358" key="NewPhpFileDialog" timestamp="1605409406131">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="786" y="358" key="NewPhpFileDialog/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1604947267955" />
+    <state x="786" y="358" key="NewPhpFileDialog/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1605409406131" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1603905049968">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
