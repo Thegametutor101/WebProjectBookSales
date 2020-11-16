@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3705c003-8ff2-443e-9a69-edc5f34c7954" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AppBundle/Management/deleteBook.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/Management/getMyBooks.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/Management/getRentedBooks.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/Management/getUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/Management/returnBook.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/Management/updateBook.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/Management/updateProfilePicture.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/Management/updateUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myBook.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myRentedBook.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/userProfile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/ressources/userPictures/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/AppBundle/ressources/userPictures/changeImage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2a28d01d-5cba-4920-8357-3c508ebe690c.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityBooks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityUsers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Model/ModelUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Model/ModelUsers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/addBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/addBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/addUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/userPictures/1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/booksales.sql" beforeDir="false" afterPath="$PROJECT_DIR$/booksales.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +88,7 @@
       <workItem from="1605378611011" duration="9686000" />
       <workItem from="1605388710282" duration="8483000" />
       <workItem from="1605466777273" duration="21001000" />
+      <workItem from="1605547795532" duration="629000" />
     </task>
     <servers />
   </component>
@@ -139,10 +123,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="57" key="SettingsEditor/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1603905049968" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1603902051110">
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1605547594878">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1603902051110" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1605547594878" />
     <state x="654" y="142" key="ftp.server.browser" timestamp="1603905043874">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

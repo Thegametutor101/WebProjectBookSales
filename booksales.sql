@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Nov 15, 2020 at 03:31 AM
+-- Generation Time: Nov 16, 2020 at 05:26 PM
 -- Server version: 8.0.18
 -- PHP Version: 7.3.12
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `booksales`
+-- Database: `420505ri_gr06`
 --
 
 -- --------------------------------------------------------
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `book` (
 
 INSERT INTO `book` (`id`, `title`, `author`, `category`, `description`, `available`, `price`, `owner`) VALUES
 ('FabBMull120', 'FableHaven Tome 1 Le Sanctuaire Secret', 'Brandon Mull', 'Fantastique, aventure', 'Depuis des siècles, le créatures fantastiques les plus extraordinaires se cachent dans un refuge secret, à l\'abri du monde monderne.\r\nCe sanctuaire s\'appelle Fablehaven.\r\nKendra et Seth ignorent tout de ce lieu magique, dont leur grand-père est pourtant le gardien.\r\nUn jour, ils découvrent l\'incroyable vérité : la forêt qui les entoure est peuplée d\'êtres fabuleux - fées, géants, sorcières, montres, ogres, satyres, naïades...\r\nAujourd\'hui, l\'avenir de Fablehaven est menacé par l\'avènement de puissances maléfiques. Ainsi commence le combat des deux enfants contre le mal, pour protéger Fablehaven de la destruction, sauver leur famille... et rester en vie.', 1, 23.99, 1),
-('FabBMull553', 'FableHaven Tome 2 Rise of the Evening Star', 'Brandon Mull', 'Fantastique, aventure', 'patato', 0, 26.99, 1),
+('FabBMull553', 'FableHaven Tome 2 Rise of the Evening Star', 'Brandon Mull', 'Fantastique, aventure', 'patato', 1, 26.99, 1),
 ('FabBMull664', 'FableHaven Tome 3', 'Brandon Mull', 'Fantaisie, Fiction', 'des créatures fantastiques partout', 1, 24.99, 1);
 
 -- --------------------------------------------------------
@@ -63,14 +63,7 @@ CREATE TABLE IF NOT EXISTS `rentals` (
   `bookID` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `userID` int(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- Dumping data for table `rentals`
---
-
-INSERT INTO `rentals` (`id`, `bookID`, `userID`) VALUES
-(1, 'FabBMull553', 1);
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
