@@ -11,12 +11,11 @@ class ModelBooks
         $this->connexion = $constants->getConnexion();
     }
 
-   function addBook($id, $title, $author, $category, $description, $available, $price, $file, $fileTemp, $owner): string
+   function addBook($id, $title, $author, $category, $description, $available, $price, $fileTemp, $owner): string
    {
        try 
        {
-           $extension = pathinfo(basename($file), PATHINFO_EXTENSION);
-           $coverDirectory = dirname(__FILE__) . '/../../ressources/bookPictures/' . $id . '.' . $extension;
+           $coverDirectory = dirname(__FILE__) . '/../../ressources/bookPictures/' . $id . '.png';
            if (!move_uploaded_file($fileTemp, $coverDirectory)) {
                return "file error";
            } else {
@@ -30,11 +29,30 @@ class ModelBooks
            return "no";
        }
    }
-    function removeBook($id): bool
+
+   function updateBook($id, $title, $author, $category, $description, $available, $price, $fileTemp, $owner): string
+   {
+       try
+       {
+           $coverDirectory = dirname(__FILE__) . '/../../ressources/bookPictures/' . $id . '.png';
+           if (!move_uploaded_file($fileTemp, $coverDirectory)) {
+               return "file error";
+           } else {
+               $request = "UPDATE book SET title='$title', author='$author', category='$category',
+                        description='$description', available='$available', price='$price', owner='$owner' WHERE id='$id'";
+               $this->connexion->exec($request);
+               return "ok";
+           }
+       }
+       catch(PDOException $e) {
+           return "no";
+       }
+   }
+    function deleteBook($id): bool
     {
        try
        {
-           $request = "DELETE FROM book WHERE id='{$id}'";
+           $request = "DELETE FROM book WHERE id='$id'";
            $this->connexion->exec($request);
            return true;
        }
@@ -48,7 +66,7 @@ class ModelBooks
         {
             $request = "INSERT INTO rentals(bookID, userID) VALUES('$bookID', '$userID')";
             $this->connexion->exec($request);
-            if (!$this->updateAvailable($bookID)) {
+            if (!$this->updateAvailableNo($bookID)) {
                 return false;
             }
             return true;
@@ -57,10 +75,36 @@ class ModelBooks
             return false;
         }
     }
-    function updateAvailable($id): bool
+    function deleteRental($bookID, $userID): bool
+    {
+        try
+        {
+            $request = "DELETE FROM rentals WHERE bookID='$bookID' AND userID='$userID'";
+            $this->connexion->exec($request);
+            if (!$this->updateAvailableYes($bookID)) {
+                return false;
+            }
+            return true;
+        }
+        catch(PDOException $e) {
+            return false;
+        }
+    }
+    function updateAvailableNo($id): bool
     {
         try {
             $request = "UPDATE book SET available='0' WHERE id='$id'";
+            $this->connexion->exec($request);
+            return true;
+        }
+        catch (PDOException $e) {
+            return false;
+        }
+    }
+    function updateAvailableYes($id): bool
+    {
+        try {
+            $request = "UPDATE book SET available='1' WHERE id='$id'";
             $this->connexion->exec($request);
             return true;
         }

@@ -33,6 +33,45 @@ class ModelUsers
         catch(PDOException $e) {
             return false;
         }
+    }
 
+    function updateUserWithPassord($id, $email, $phone, $password):bool
+    {
+        try
+        {
+            $requete = "UPDATE user SET email='$email', phone='$phone', password='$password' WHERE id='$id'";
+            $this->connexion->exec($requete);
+
+            return true;
+        }
+        catch(PDOException $e) {
+            return false;
+        }
+    }
+
+    function updateUser($id, $email, $phone):bool
+    {
+        try
+        {
+            $requete = "UPDATE user SET email='$email', phone='$phone' WHERE id='$id'";
+            $this->connexion->exec($requete);
+
+            return true;
+        }
+        catch(PDOException $e) {
+            return false;
+        }
+    }
+
+    function updateUserPhoto(): bool
+    {
+        try
+        {
+
+            return true;
+        }
+        catch (PDOException $e) {
+            return false;
+        }
     }
 }

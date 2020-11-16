@@ -11,6 +11,21 @@ class EntityUsers
         $this->connexion = $constants->getConnexion();
     }
 
+    function getUserByID($id): array
+    {
+        $lines = array();
+        try {
+            $request = "SELECT * FROM user WHERE id='$id'";
+            $result = $this->connexion->query($request);
+            $lines = $result->fetchAll();
+
+            return $lines;
+        }
+        catch(PDOException $e) {
+            return $lines;
+        }
+    }
+
     function login(string $email, string $password): bool
     {
         $isSame = false;

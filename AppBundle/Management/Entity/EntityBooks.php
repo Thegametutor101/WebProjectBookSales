@@ -40,6 +40,37 @@ class EntityBooks
             return $lines;
         }
     }
+
+    function getBooksByOwner($id)
+    {
+        $lines = array();
+        try {
+            $request = "SELECT * FROM book where owner='$id'";
+            $result = $this->connexion->query($request);
+            $lines = $result->fetchAll();
+
+            return $lines;
+        }
+        catch(PDOException $e) {
+            return $lines;
+        }
+    }
+
+    function getBooksRented($id)
+    {
+        $lines = array();
+        try {
+            $request = "SELECT * FROM rentals where userID='$id'";
+            $result = $this->connexion->query($request);
+            $lines = $result->fetchAll();
+
+            return $lines;
+        }
+        catch(PDOException $e) {
+            return $lines;
+        }
+    }
+
     function getBooksSearchByTitle($text, $sort):array
     {
         $lines = array();

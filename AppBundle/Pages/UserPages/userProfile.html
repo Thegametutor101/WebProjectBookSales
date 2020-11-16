@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Votre Profile</title>
+    <link rel="stylesheet" type="text/css" href="../../ressources/css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="main">
+    <div class="header"></div>
+    <div class="container">
+        <div class="messages"></div>
+        <div class="mainForm">
+            <div id="left">
+                <img id="profilePicture" style="height: 250px;border-radius: 10px;max-height: 100%;max-width: 100%;width: 100%">
+                <img id="changePicture" src="../../ressources/userPictures/changeImage.png">
+                <input id="profilePic" name="profilePic" type="file" accept="image/*" style="display: none">
+            </div>
+            <div id="right">
+                <div class="profileNav">
+                    <button class="information">Informations</button>
+                    <button class="myBooks">Mes Livres à vendre</button>
+                    <button class="myRentedBooks">Mes Livres empruntées</button>
+                </div>
+                <div class="content"><br><br>
+                    <div class="informationBox">
+                        <div>
+                            <label class="info" id="lastName"></label>
+                            <label class="info" id="firstName"></label>
+                            <span id="token" style="display: none"></span>
+                        </div>
+                        <input class="inputs" id="email" type="text" name="email">
+                        <input class="inputs" id="phone" type="text" name="phone">
+                        <input class="inputs" id="newPassword" type="password" name="newPassword" placeholder="Nouveau Mot de passe">
+                        <input class="inputs" id="newPasswordConfirm" type="password" name="newPasswordConfirm" placeholder="Confirmer mot de passe"><br><br>
+                        <button class="headerButton submitButton" style="width: auto;margin: 0 15px 0 20%">Mettre à jour</button>
+                        <button class="headerButton logoutButton" style="width: auto;">Déconnection</button>
+                    </div>
+                    <div class="myBooksBox">
+                        <div class="myBookList bookList"></div>
+                    </div>
+                    <div class="myRentedBooksBox">
+                        <div class="rentedBookList bookList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<style>
+    #changePicture {
+        height: 250px;
+        border-radius: 10px;
+        display: none;
+        max-height: 100%;
+        max-width: 100%;
+        width: 100%
+    }
+    #left:hover #changePicture {
+        display: block;
+    }
+    .container {
+        max-width: 80%;
+        width: 80%;
+        padding: 15px 5%;
+        margin: 15px 5%;
+        background-color: #404040;
+    }
+    .messages {
+        width: 100%;
+    }
+    .mainForm {
+        display: flex;
+        flex-direction: row;
+    }
+    #left {
+        display: inline;
+        width: 25%;
+        position: relative;
+        height: 250px;
+    }
+    #left > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #right {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+    }
+    .informationBox {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 0 25%;
+        text-align: left;
+    }
+    .info {
+        margin-bottom: 10px;
+    }
+    .inputs {
+        width: 100%;
+        border: none;
+        background-color: #2e2e2e;
+        font-size: 16px;
+        margin: 5px 0;
+        padding: 5px;
+    }
+    .inputs:focus {
+        outline: none;
+        border: 2px solid #d9b85f;
+        color: white;
+    }
+    .profileNav {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    .profileNav > button {
+        margin-left: 4%;
+        width: 29%;
+        background-color: #404040;
+        border: none;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 12px;
+        padding: 15px;
+    }
+    .profileNav > button:hover {
+        background-color: #2e2e2e;
+        box-shadow: 7px 6px 28px 1px rgba(230, 197, 108, 0.24);
+        cursor: pointer;
+        outline: none;
+        color: white;
+        transform: scale(1.02);
+        font-size: 17px;
+    }
+    .profileNav > button:active {
+        transform: scale(0.98);
+        /* Scaling button to 0.98 to its original size */
+        box-shadow: 3px 2px 22px 1px rgba(230, 197, 108, 0.24);
+        /* Lowering the shadow */
+        background-color: #3c3c3c;
+        color: white;
+    }
+    .bookList {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 1100px;
+        width: 100%;
+    }
+    .bookList > .card {
+        border: 2px solid #404040;
+        border-radius: 3px;
+        margin: 10px 25px;
+        width: 200px;
+        height: 300px;
+        padding: 5px;
+        background-color: #a38d27;
+        color: #f2f2f2;
+        display: flex;
+        flex-direction: column;
+    }
+    .card img {
+        max-width: 100%;
+        max-height: 100%;
+        height: 100%;
+        width: 100%;
+    }
+</style>
+<script src="../../ressources/javascript/scripts.js"></script>
+<script>
+    $(document).ready(function () {
+        $.get("../header.html", function (data) {
+            let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
+            $(".header").html(body);
+            $(".userAndPageName").css("display", "none");
+            $(".searchBar").css("visibility", "hidden");
+            headerListener();
+        });
+        $("#profilePicture").attr("src", "../../ressources/userPictures/" + getUrlParameter('isLoggedIn'));
+        $(".informationBox").css("display", "block");
+        $(".myBooksBox").css("display", "none");
+        $(".myRentedBooksBox").css("display", "none");
+        getInfo();
+        profileNav();
+        userProfileInfo();
+        $(".logoutButton").click(function () {
+            if (confirm("Êtes-vous sûr de vouloir vous déconnecter?")) {
+                window.location.href = baseUrl + "/Pages/index.html";
+            }
+        });
+        $("#changePicture").click(function() {
+            $("#profilePic").click();
+        });
+        updateProfilePicture();
+    });
+</script>
+</html>

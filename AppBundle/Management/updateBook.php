@@ -17,5 +17,5 @@ $id = substr($title, 0, 3) .
     substr($authorWords[count($authorWords) - 1], 0) .
     rand(0, 9) . rand(0, 9) . rand(0, 9);
 
-echo json_encode(array("message" => $modelBook->addBook(
+echo json_encode(array("message" => $modelBook->updateBook(
     $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner)));

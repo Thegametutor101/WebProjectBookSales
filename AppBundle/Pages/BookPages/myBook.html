@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../ressources/css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="main">
+    <div class="header"></div>
+    <div class="container">
+        <div class="messages"></div>
+        <div class="mainForm">
+            <div class="left">
+                <img id="bookCover" src="../../ressources/bookPictures/" style="height: 550px">
+            </div>
+            <div class="right">
+                <div class="mainForm">
+                    <div id="left">
+                        <label class="labels" for="title">Titre</label>
+                        <label class="labels" for="author">Auteur</label>
+                        <label class="labels" for="category">Catégorie</label>
+                        <label class="labels" for="description">Decription</label>
+                        <label class="labels">Disponible pour la vente?</label>
+                        <label class="labels" for="price">Prix</label>
+                        <label class="labels" for="cover">Image de couverture</label>
+                    </div>
+                    <div id="right">
+                        <input class="inputs" type="text" id="title" name="title" placeholder="Votre Titre" autofocus required aria-invalid="false" aria-required="true">
+                        <input class="inputs" type="text" id="author" name="author" placeholder="Auteur du livre" required aria-invalid="false" aria-required="true">
+                        <input class="inputs" id="category" type="text" list="categoryList" name="category" placeholder="Entrez a catégorie du livre" required aria-invalid="false" aria-required="true">
+                        <datalist class="inputs" id="categoryList">
+                            <option value="Administration">Administration</option>
+                            <option value="Art">Art</option>
+                            <option value="Architecture">Architecture</option>
+                            <option value="Économie">Économique</option>
+                            <option value="Français">Littérature Française</option>
+                            <option value="Géographie">Géographique</option>
+                            <option value="Légal">Légal</option>
+                            <option value="Mathématique">Mathématique</option>
+                            <option value="Médical">Médical</option>
+                            <option value="Musique">Musique</option>
+                            <option value="Philosophie">Philosophique</option>
+                            <option value="Technologie">Technologique</option>
+                            <option value="Théâtre">Théâtre</option>
+                            <option value="Enfant">Enfant</option>
+                            <option value="Théâtre">Romantique</option>
+                            <option value="Sportif">Sportif</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Fantaisie">Fantaisie</option>
+                            <option value="Fiction">Fiction</option>
+                            <option value="Science-Fiction">Science-Fiction</option>
+                            <option value="Astromonie">Astromonie</option>
+                            <option value="Astrologie">Astrologie</option>
+                            <option value="Historique">Historique</option>
+                            <option value="Naratif">Naratif</option>
+                            <option value="Mystérieux">Mystérieux</option>
+                            <option value="Policier">Policier</option>
+                            <option value="Biographie">Biographie</option>
+                            <option value="Documentaire">Documentaire</option>
+                        </datalist>
+                        <input class="inputs" type="text" id="description" name="description" placeholder="De quoi parle votre livre?">
+                        <div class="radioAvailable" style="text-align: left; align-items: start; align-content: start;padding-left: 40px;margin-top: 40px">
+                            <input id="availableBookYes" name="available" type="radio"> Oui
+                            <input id="availableBookNo" name="available" type="radio" style="margin-left: 20px"> Non
+                        </div>
+                        <input class="inputs" id="price" name="price" min="0.01" step=".01" type="number" placeholder="10.99" style="margin-top: 30px" required aria-invalid="false" aria-required="true">
+                        <input class="inputs" id="cover" name="cover" type="file" accept="image/*" style="background-color: #404040;margin-top: 10px" required aria-invalid="false" aria-required="true">
+                    </div>
+                </div><br><br>
+                <div style="display: flex;flex-direction: row;margin-left: 20%">
+                    <button class="headerButton submitButton material-icons" style="margin-right: 15px;" type="submit">done</button>
+                    <button class="headerButton resetButton material-icons" style="margin-right: 15px;" type="reset">clear</button>
+                    <button class="headerButton deleteButton material-icons">delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<style>
+    .container {
+        max-width: 80%;
+        width: 80%;
+        padding: 15px 5%;
+        margin: 15px 5%;
+        background-color: #404040;
+    }
+    .messages {
+        width: 100%;
+    }
+    .mainForm {
+        display: flex;
+        flex-direction: row;
+        height: 550px;
+    }
+    #left {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+    }
+    #right {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+    }
+    .left {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+    }
+    .right {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        height: 100%;
+    }
+    .labels {
+        margin-top: 20px;
+        height: 100%;
+        text-align: left;
+        margin-left: 20px;
+    }
+    .inputs {
+        width: 90%;
+        border: none;
+        background-color: #2e2e2e;
+        font-size: 16px;
+        margin: 10px 0 10px 20px;
+        height: 100%;
+        padding: 5px;
+    }
+    select.inputs {
+        width: 92.5%;
+    }
+    .inputs:focus {
+        outline: none;
+        border: 2px solid #d9b85f;
+        color: white;
+    }
+</style>
+<script src="../../ressources/javascript/scripts.js"></script>
+<script>
+    $(document).ready(function () {
+        $.get("../header.html", function (data) {
+            let body = data.replace(/^.*?<body>(.*?)<\/body>.*?$/s, "$1");
+            $(".header").html(body);
+            $(".pageName").css("display", "none");
+            $(".searchBar").css("visibility", "hidden");
+            $(".profilePicture").find("img").attr("src","../../ressources/userPictures/" + getUrlParameter('isLoggedIn'));
+            headerListener();
+        });
+        $('#bookCover').attr("src", "../../ressources/bookPictures/" + getUrlParameter('id'));
+        loadMyBook();
+        updateBook();
+        $(".resetButton").click(function (e) {
+            loadMyBook();
+        });
+    });
+</script>
+</html>
