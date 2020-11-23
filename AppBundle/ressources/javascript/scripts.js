@@ -273,7 +273,7 @@ function getMyBooks() {
             for (i = 0; i < list.length; i++) {
                 $(".myBookList").append(
                     "<div class='card'>" +
-                    "<img src='../../ressources/bookPictures/" + list[i][0] + "' class='bookPicture' alt='" + list[i][1] + "'>" +
+                    "<img src='../../ressources/bookPictures/" + list[i][0] + ".png' class='bookPicture' alt='" + list[i][1] + "'>" +
                     "<div class='id' style=';vertical-align: top;display: none'>" + list[i][0] + "</div>" +
                     "<div class='title' style=';vertical-align: top;display: none'>" + list[i][1] + "</div>" +
                     "<div class='author' style=';vertical-align: top;display: none'>" + list[i][2] + "</div>" +
@@ -432,7 +432,7 @@ function getMyRentedBooks() {
             for (i = 0; i < list.length; i++) {
                 $(".rentedBookList").append(
                     "<div class='card'>" +
-                    "<img src='../../ressources/bookPictures/" + list[i][1] + "' class='bookPicture' alt='" + list[i][1] + "'>" +
+                    "<img src='../../ressources/bookPictures/" + list[i][1] + ".png' class='bookPicture' alt='" + list[i][1] + "'>" +
                     "<div class='id' style=';vertical-align: top;display: none'>" + list[i][1] + "</div>" +
                     "</div>");
             }
@@ -667,7 +667,7 @@ function printCards(list) {
         if (list[i][5] === "1") {
             $(".bookList").append(
                 "<div class='card'>" +
-                "<img src='../ressources/bookPictures/" + list[i][0] + "' class='bookPicture' alt='" + list[i][1] + "'>" +
+                "<img src='../ressources/bookPictures/" + list[i][0] + ".png' class='bookPicture' alt='" + list[i][1] + "'>" +
                 "<div class='id' style=';vertical-align: top;display: none'>" + list[i][0] + "</div>" +
                 "<div class='title' style=';vertical-align: top;display: none'>" + list[i][1] + "</div>" +
                 "<div class='author' style=';vertical-align: top;display: none'>" + list[i][2] + "</div>" +

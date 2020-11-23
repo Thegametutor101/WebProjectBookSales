@@ -90,7 +90,7 @@
             $(".header").html(body);
             $(".pageName").text(getUrlParameter('title'));
             $(".searchBar").css("display", "none");
-            $(".profilePicture").find("img").attr("src","../../ressources/userPictures/" + getUrlParameter('isLoggedIn'));
+            $(".profilePicture").find("img").attr("src","../../ressources/userPictures/" + getUrlParameter('isLoggedIn') + ".png");
             if (isNaN(getUrlParameter('isLoggedIn'))) {
                 $(".addButton").css("display", "none");
                 $(".profilePicture").find("img").attr("src","../../ressources/userPictures/defaultUserProfile.png");
@@ -98,7 +98,7 @@
             headerListener();
         });
         $('#BookId').text(getUrlParameter('id'));
-        $('#bookCover').attr("src", "../../ressources/bookPictures/" + getUrlParameter('id'));
+        $('#bookCover').attr("src", "../../ressources/bookPictures/" + getUrlParameter('id') + ".png");
         $('Title').text(getUrlParameter('title'));
         $.ajax({
             url: "../../Management/getBook.php",

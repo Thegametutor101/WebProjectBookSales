@@ -62,7 +62,7 @@ $(document).ready(function () {
         $(".header").html(body);
         $(".pageName").text("Accueil");
         $("#searchValue").focus();
-        $(".profilePicture").find("img").attr("src","../ressources/userPictures/" + getUrlParameter('isLoggedIn'));
+        $(".profilePicture").find("img").attr("src","../ressources/userPictures/" + getUrlParameter('isLoggedIn') + ".png");
         if (isNaN(getUrlParameter('isLoggedIn'))) {
             $(".addButton").css("display", "none");
             $(".profilePicture").find("img").attr("src","../ressources/userPictures/defaultUserProfile.png");

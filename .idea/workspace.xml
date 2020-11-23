@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3705c003-8ff2-443e-9a69-edc5f34c7954" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2a28d01d-5cba-4920-8357-3c508ebe690c.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/ressources/userPictures/17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/loadBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/loadBooks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myBook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myRentedBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myRentedBook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/viewBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/viewBook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/userProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/FabBMull120.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/FabBMull120.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/FabBMull553.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/FabBMull553.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/booksales.sql" beforeDir="false" afterPath="$PROJECT_DIR$/booksales.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +98,10 @@
       <workItem from="1605388710282" duration="8483000" />
       <workItem from="1605466777273" duration="21001000" />
       <workItem from="1605547795532" duration="629000" />
+      <workItem from="1605548898665" duration="1956000" />
+      <workItem from="1605814007884" duration="23000" />
+      <workItem from="1606151974739" duration="705000" />
+      <workItem from="1606153847186" duration="5508000" />
     </task>
     <servers />
   </component>
