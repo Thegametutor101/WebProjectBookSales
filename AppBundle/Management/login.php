@@ -7,12 +7,22 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         $result = $entityUsers->login($_POST['email'], $_POST['password']);
         if ($result) {
             $loggedUser = $entityUsers->setNameCookie($_POST['email']);
-            echo json_encode(array("message" => "ok", "loggedUser" => $loggedUser));
+            if (isset($_POST['mobile']))
+            {
+                echo json_encode($loggedUser);
+            } else {
+                echo json_encode(array("message" => "ok", "loggedUser" => $loggedUser));
+            }
         } else {
             echo json_encode(array("message" => "no"));
         }
     } else {
-        echo json_encode(array("message" => "not email"));
+        if (isset($_POST['mobile']))
+        {
+            echo json_encode("0");
+        } else{
+            echo json_encode(array("message" => "not email"));
+        }
     }
 } else {
     echo json_encode(array("message" => "error"));
