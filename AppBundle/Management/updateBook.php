@@ -12,10 +12,12 @@ $price = $_POST["price"];
 $owner = $_POST["owner"];
 
 $authorWords = explode(' ', ucwords($author));
-$id = substr($title, 0, 3) .
-    substr($authorWords[0], 0, 1) .
-    substr($authorWords[count($authorWords) - 1], 0) .
-    rand(0, 9) . rand(0, 9) . rand(0, 9);
+$id = $_POST['id'];
 
-echo json_encode(array("message" => $modelBook->updateBook(
-    $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner)));
+if (!isset($_FILES['cover'])) {
+    echo json_encode(array("message" => $modelBook->updateBook(
+        $id, $title, $author, $category, $description, $available, $price, $owner)));
+} else {
+    echo json_encode(array("message" => $modelBook->updateBookWithCover(
+        $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner)));
+}
