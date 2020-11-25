@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3705c003-8ff2-443e-9a69-edc5f34c7954" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AppBundle/ressources/userPictures/17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/loadBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/loadBooks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myRentedBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myRentedBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/viewBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/viewBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/userProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/FabBMull120.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/FabBMull120.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/FabBMull553.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/FabBMull553.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/updateBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/updateBook.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +93,10 @@
       <workItem from="1605548898665" duration="1956000" />
       <workItem from="1605814007884" duration="23000" />
       <workItem from="1606151974739" duration="705000" />
-      <workItem from="1606153847186" duration="5508000" />
+      <workItem from="1606153847186" duration="6346000" />
+      <workItem from="1606226500535" duration="1810000" />
+      <workItem from="1606246553003" duration="983000" />
+      <workItem from="1606249439032" duration="1712000" />
     </task>
     <servers />
   </component>
@@ -124,6 +119,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1603905008844" />
+    <state width="189" height="457" key="HiddenNamespacesPopup" timestamp="1606250279464">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="189" height="457" key="HiddenNamespacesPopup/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1606250279464" />
     <state x="549" y="135" key="NewPhpClassDialog" timestamp="1604001452527">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

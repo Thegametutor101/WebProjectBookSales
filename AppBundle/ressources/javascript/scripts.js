@@ -144,9 +144,11 @@ function updateProfilePicture() {
                 processData: false,
                 success:function (result) {
                     window.location.href = baseUrl + "/Pages/UserPages/userProfile.html?isLoggedIn=" + getUrlParameter('isLoggedIn');
+                    location.reload();
                 },
                 error:function (message, er) {
                     window.location.href = baseUrl + "/Pages/UserPages/userProfile.html?isLoggedIn=" + getUrlParameter('isLoggedIn');
+                    location.reload();
                 }
             });
         } else {
@@ -316,6 +318,7 @@ function updateBook() {
                         }
                         if (!isNaN(price)) {
                             if(files.length > 0 ) {
+                                formData.append('id', getUrlParameter('id'));
                                 formData.append('title', title);
                                 formData.append('author', author);
                                 formData.append('category', category);
@@ -348,8 +351,34 @@ function updateBook() {
                                     }
                                 });
                             } else {
-                                $(".messages").empty();
-                                $(".messages").append("<div>Veuillez choisir une image de couverture.</div><br><hr>");
+                                let values = {
+                                    'id': getUrlParameter('id'),
+                                    'title': title,
+                                    'author': author,
+                                    'category': category,
+                                    'description': description,
+                                    'available': available,
+                                    'price': price,
+                                    'owner': getUrlParameter('isLoggedIn')
+                                };
+                                console.log(values);
+                                $.ajax({
+                                    url: "../../Management/updateBook.php",
+                                    type: "POST",
+                                    data: values,
+                                    dataType: "json",
+                                    success: function(result){
+                                        if (result["message"] === "ok") {
+                                            window.location.href = baseUrl + "/Pages/UserPages/userProfile.html?isLoggedIn=" + getUrlParameter('isLoggedIn');
+                                        } else if (result["message"] === "no") {
+                                            $(".messages").empty();
+                                            $(".messages").append("<div>Une erreur est survenue lors de l'ajout du livre.</div><br><hr>")
+                                        }
+                                    },
+                                    error: function (message, er) {
+                                        console.log("downloading book list: " + message);
+                                    }
+                                });
                             }
                         } else {
                             $(".messages").empty();
@@ -383,6 +412,7 @@ function updateBook() {
                 dataType: "json",
                 success:function (result) {
                     window.location.href = baseUrl + "/Pages/UserPages/userProfile.html?isLoggedIn=" + getUrlParameter('isLoggedIn');
+                    location.reload();
                 },
                 error:function (message, er) {
                     console.log("error deleting book: " + message);
@@ -648,8 +678,7 @@ function buyBook() {
         }
     });
 }
-function cardClick()
-{
+function cardClick() {
     $('.card').click(function(){
         let id = $(this).find(".id").text();
         let title = $(this).find(".title").text();

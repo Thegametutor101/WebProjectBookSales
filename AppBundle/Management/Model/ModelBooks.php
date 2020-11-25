@@ -30,7 +30,21 @@ class ModelBooks
        }
    }
 
-   function updateBook($id, $title, $author, $category, $description, $available, $price, $fileTemp, $owner): string
+   function updateBook($id, $title, $author, $category, $description, $available, $price, $owner): string
+   {
+       try
+       {
+           $request = "UPDATE book SET title='$title', author='$author', category='$category',
+                    description='$description', available='$available', price='$price', owner='$owner' WHERE id='$id'";
+           $this->connexion->exec($request);
+           return "ok";
+       }
+       catch(PDOException $e) {
+           return "no";
+       }
+   }
+
+   function updateBookWithCover($id, $title, $author, $category, $description, $available, $price, $fileTemp, $owner): string
    {
        try
        {
