@@ -2,7 +2,15 @@
 require_once ("Model/ModelBooks.php");
 $modelBooks = new ModelBooks();
 if ($modelBooks->deleteRental($_POST['bookID'], $_POST['userID'])) {
-    echo json_encode(array("message" => "ok"));
+    if (isset($_POST['mobile'])) {
+        echo json_encode("ok");
+    } else {
+        echo json_encode(array("message" => "ok"));
+    }
 } else {
-    echo json_encode(array("message" => "no"));
+    if (isset($_POST['mobile'])) {
+        echo json_encode("no");
+    } else {
+        echo json_encode(array("message" => "no"));
+    }
 }
