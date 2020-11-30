@@ -17,5 +17,12 @@ $id = substr($title, 0, 3) .
     substr($authorWords[count($authorWords) - 1], 0) .
     rand(0, 9) . rand(0, 9) . rand(0, 9);
 
+if (isset($_POST['mobile']))
+{
+    echo json_encode($modelBook->addBook(
+    $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner));
+}
+else
 echo json_encode(array("message" => $modelBook->addBook(
     $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner)));
+}

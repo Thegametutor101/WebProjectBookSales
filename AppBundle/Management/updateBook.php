@@ -14,10 +14,26 @@ $owner = $_POST["owner"];
 $authorWords = explode(' ', ucwords($author));
 $id = $_POST['id'];
 
+
 if (!isset($_FILES['cover'])) {
-    echo json_encode(array("message" => $modelBook->updateBook(
+    if (isset($_POST['mobile']))
+    {
+        echo json_encode($modelBook->updateBook(
+        $id, $title, $author, $category, $description, $available, $price, $owner));
+    }
+    else{
+        echo json_encode(array("message" => $modelBook->updateBook(
         $id, $title, $author, $category, $description, $available, $price, $owner)));
+    }
+    
 } else {
-    echo json_encode(array("message" => $modelBook->updateBookWithCover(
+    if (isset($_POST['mobile']))
+    {
+        echo json_encode($modelBook->updateBookWithCover(
+        $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner));
+    }
+    else{
+        echo json_encode(array("message" => $modelBook->updateBookWithCover(
         $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner)));
+    }
 }
