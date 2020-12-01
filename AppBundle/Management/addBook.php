@@ -3,13 +3,14 @@ require_once('Model/ModelBooks.php');
 
 $modelBook = new ModelBooks();
 
-$title = $_POST["title"];
-$author = $_POST["author"];
-$category = $_POST["category"];
-$description = $_POST["description"];
-$available = $_POST["available"];
-$price = $_POST["price"];
-$owner = $_POST["owner"];
+$title = trim($_POST["title"],"\"");
+$author = trim($_POST["author"],"\"");
+$category = trim($_POST["category"],"\"");
+$description = trim($_POST["description"],"\"");
+$available = trim($_POST["available"],"\"");
+$price = trim($_POST["price"],"\"");
+$owner = trim($_POST["owner"],"\"");
+
 
 $authorWords = explode(' ', ucwords($author));
 $id = substr($title, 0, 3) .
@@ -17,12 +18,15 @@ $id = substr($title, 0, 3) .
     substr($authorWords[count($authorWords) - 1], 0) .
     rand(0, 9) . rand(0, 9) . rand(0, 9);
 
-if (isset($_POST['mobile']))
+
+
+if(isset($_POST["mobile"]))
 {
     echo json_encode($modelBook->addBook(
     $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner));
 }
 else
-echo json_encode(array("message" => $modelBook->addBook(
-    $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner)));
+{
+    echo json_encode(array("message" => $modelBook->addBook(
+    $id, $title, $author, $category, $description, $available, $price, $_FILES["cover"]["tmp_name"], $owner)));
 }

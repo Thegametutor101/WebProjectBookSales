@@ -15,18 +15,19 @@ class ModelBooks
    {
        try 
        {
-           $coverDirectory = dirname(__FILE__) . '/../../ressources/bookPictures/' . $id . '.png';
+            $coverDirectory="\\\\TECHINFOTR.QC.CA\\PARTAGES\\FTP\\Cours\\A2020\\420505RI\\Equipe_6\\AppBundle\\ressources\\bookPictures\\".$id. '.png';
+           //$coverDirectory = dirname(__FILE__) . '\\'. $id . '.png';
            if (!move_uploaded_file($fileTemp, $coverDirectory)) {
                return "file error";
            } else {
                $request = "INSERT INTO book VALUES('$id', '$title', '$author', '$category',
-                        '$description', '$available', '$price', '$owner')";
+                        '$description', $available, $price, $owner)";
                $this->connexion->exec($request);
                return "ok";
            }
        }
        catch(PDOException $e) {
-           return "no";
+           return $e;
        }
    }
 

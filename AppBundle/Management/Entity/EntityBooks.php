@@ -71,6 +71,21 @@ class EntityBooks
         }
     }
 
+    function getBooksRentedMobile($id)
+    {
+        $lines = array();
+        try {
+            $request = "SELECT B.id, B.title, B.author, B.category, B.description, B.available, B.price, B.owner FROM rentals inner join book B on rentals.bookID = B.id where rentals.userID='$id'";
+            $result = $this->connexion->query($request);
+            $lines = $result->fetchAll();
+
+            return $lines;
+        }
+        catch(PDOException $e) {
+            return $lines;
+        }
+    }
+
     function getBooksSearchByTitle($text, $sort):array
     {
         $lines = array();

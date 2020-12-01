@@ -41,7 +41,11 @@ if (!isset($_POST['searchValue'])) {
 }
 if (empty($lines)) {
         $lines = $entityBooks->getBooksSearchSort($sortOnly);
+    if (isset($_POST['mobile'])) {
+        echo json_encode(array());
+    } else {
         echo json_encode(array("notFound" => "nope", "lines" => $lines));
+    }
 } else {
     if (isset($_POST['mobile'])) {
         echo json_encode($lines);
