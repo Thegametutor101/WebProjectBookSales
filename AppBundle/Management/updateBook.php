@@ -3,13 +3,13 @@ require_once('Model/ModelBooks.php');
 
 $modelBook = new ModelBooks();
 
-$title = $_POST["title"];
-$author = $_POST["author"];
-$category = $_POST["category"];
-$description = $_POST["description"];
-$available = $_POST["available"];
-$price = $_POST["price"];
-$owner = $_POST["owner"];
+$title = trim($_POST["title"],"\"");
+$author = trim($_POST["author"],"\"");
+$category = trim($_POST["category"],"\"");
+$description = trim($_POST["description"],"\"");
+$available = trim($_POST["available"],"\"");
+$price = trim($_POST["price"],"\"");
+$owner = trim($_POST["owner"],"\"");
 
 $authorWords = explode(' ', ucwords($author));
 $id = $_POST['id'];
