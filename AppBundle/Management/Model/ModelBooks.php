@@ -35,10 +35,11 @@ class ModelBooks
    {
        try
        {
+            trim($id,"\"");
            $request = "UPDATE book SET title='$title', author='$author', category='$category',
                     description='$description', available='$available', price='$price', owner='$owner' WHERE id='$id'";
            $this->connexion->exec($request);
-           return $request;
+           return "ok";
        }
        catch(PDOException $e) {
            return "no";
@@ -49,18 +50,19 @@ class ModelBooks
    {
        try
        {
+        trim($id,"\"");
         $coverDirectory="\\\\TECHINFOTR.QC.CA\\PARTAGES\\FTP\\Cours\\A2020\\420505RI\\Equipe_6\\AppBundle\\ressources\\bookPictures\\".$id. '.png';
            if (!move_uploaded_file($fileTemp, $coverDirectory)) {
-               return "file error";
+               return $coverDirectory;
            } else {
                $request = "UPDATE book SET title='$title', author='$author', category='$category',
                         description='$description', available='$available', price='$price', owner='$owner' WHERE id='$id'";
                $this->connexion->exec($request);
-               return $request;
+               return "ok";
            }
        }
        catch(PDOException $e) {
-           return "no";
+           return $e;
        }
    }
     function deleteBook($id): bool
