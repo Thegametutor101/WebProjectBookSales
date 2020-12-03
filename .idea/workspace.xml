@@ -3,16 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="3705c003-8ff2-443e-9a69-edc5f34c7954" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityBooks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/getBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/getBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/getRentedBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/getRentedBooks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/getUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/getUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/loadBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/loadBooks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/rentBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/rentBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/returnBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/returnBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/updateUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/updateUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myBook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myRentedBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myRentedBook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/viewBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/viewBook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/addUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/connectUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/connectUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/userProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +101,8 @@
       <workItem from="1606246553003" duration="983000" />
       <workItem from="1606249439032" duration="1712000" />
       <workItem from="1606403396962" duration="8017000" />
+      <workItem from="1607021889237" duration="245000" />
+      <workItem from="1607024460905" duration="1484000" />
     </task>
     <servers />
   </component>
