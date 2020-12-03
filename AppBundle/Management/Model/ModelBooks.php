@@ -38,7 +38,7 @@ class ModelBooks
            $request = "UPDATE book SET title='$title', author='$author', category='$category',
                     description='$description', available='$available', price='$price', owner='$owner' WHERE id='$id'";
            $this->connexion->exec($request);
-           return "ok";
+           return $request;
        }
        catch(PDOException $e) {
            return "no";
@@ -56,7 +56,7 @@ class ModelBooks
                $request = "UPDATE book SET title='$title', author='$author', category='$category',
                         description='$description', available='$available', price='$price', owner='$owner' WHERE id='$id'";
                $this->connexion->exec($request);
-               return "ok";
+               return $request;
            }
        }
        catch(PDOException $e) {

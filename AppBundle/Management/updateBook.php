@@ -12,7 +12,7 @@ $price = trim($_POST["price"],"\"");
 $owner = trim($_POST["owner"],"\"");
 
 $authorWords = explode(' ', ucwords($author));
-$id = $_POST['id'];
+$id = trim($_POST['id'],"\"");
 
 
 if (!isset($_FILES['cover'])) {
