@@ -1,8 +1,25 @@
 <?php
 require_once ("Model/ModelUsers.php");
 $modelUsers = new ModelUsers();
+
+$id=trim($_POST['id'],"\"");
+$firstName=trim($_POST['firstName'],"\"");
+$lastName=trim($_POST['lastName'],"\"");
+$email=trim($_POST['email'],"\"");
+$phone=trim($_POST['phone'],"\"");
+$password=trim($_POST['password'],"\"");
+$adress;
+
+if(!isset($_POST['adress'])){
+    $adress="3175 Boulevard Laviolette, Trois-Rivières, Quebec G8Z 1E9";
+}
+else{
+    $adress=trim($_POST['adress'],"\"");
+}
+
+
 if (isset($_POST['password'])) {
-    if ($modelUsers->updateUserWithPassord($_POST['id'], $_POST['email'], $_POST['phone'], $_POST['password'])) {
+    if ($modelUsers->updateUserWithPassord($id, $email, $phone, $password,$adress)) {
         if (isset($_POST['mobile'])) {
             echo json_encode("ok");
         } else {
@@ -16,7 +33,7 @@ if (isset($_POST['password'])) {
         }
     }
 } else {
-    if ($modelUsers->updateUser($_POST['id'], $_POST['email'], $_POST['phone'])) {
+    if ($modelUsers->updateUser($id, $email, $phone,$adress)) {
         if (isset($_POST['mobile'])) {
             echo json_encode("ok");
         } else {

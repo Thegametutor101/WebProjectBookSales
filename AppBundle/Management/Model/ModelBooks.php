@@ -53,7 +53,7 @@ class ModelBooks
         trim($id,"\"");
         $coverDirectory="\\\\TECHINFOTR.QC.CA\\PARTAGES\\FTP\\Cours\\A2020\\420505RI\\Equipe_6\\AppBundle\\ressources\\bookPictures\\".$id. '.png';
            if (!move_uploaded_file($fileTemp, $coverDirectory)) {
-               return $coverDirectory;
+               return "file error";
            } else {
                $request = "UPDATE book SET title='$title', author='$author', category='$category',
                         description='$description', available='$available', price='$price', owner='$owner' WHERE id='$id'";

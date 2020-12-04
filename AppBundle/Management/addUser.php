@@ -4,11 +4,28 @@ require_once('Entity/EntityUsers.php');
 $modelUsers = new ModelUsers();
 $entityUsers = new EntityUsers();
 $result = false;
-if (isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['password'])) {
-    if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $result = $modelUsers->addUser($_POST['firstName'],$_POST['lastName'],$_POST['email'],$_POST['phone'], $_POST['password']);
+
+
+$firstName=trim($_POST['firstName'],"\"");
+$lastName=trim($_POST['lastName'],"\"");
+$email=trim($_POST['email'],"\"");
+$phone=trim($_POST['phone'],"\"");
+$password=trim($_POST['password'],"\"");
+$adress;
+
+if(!isset($_POST['adress'])){
+    $adress="3175 Boulevard Laviolette, Trois-Rivières, Quebec G8Z 1E9";
+}
+else{
+    $adress=trim($_POST['adress'],"\"");
+}
+
+
+if (isset($firstName) && isset($lastName)&&isset($email)&&isset($phone) && isset($password)) {
+    if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $result = $modelUsers->addUser($firstName,$lastName,$email,$phone,$password,$adress);
         if ($result) {
-            $loggedUser = $entityUsers->setNameCookie($_POST['email']);
+            $loggedUser = $entityUsers->setNameCookie($email);
             if (isset($_POST['mobile']))
             {
                 echo json_encode($loggedUser);
