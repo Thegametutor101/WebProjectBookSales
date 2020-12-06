@@ -162,9 +162,9 @@ function addBook() {
         let regex = /[^a-z0-9 _.'éèêûîâàçïëöä:;,?!-]/gi;
         let title = $("#title").val().replace(regex, '');
         let author = $("#author").val().replace(regex, '');
-        let category = $("#category").val().replace(/[^a-z0-9 ,'éèêûîâàçïëöä]/gi, ',');
+        let category = $("#category").val().replace(regex, ',');
         let description = $("#description").val().replace(regex, '');
-        let price = parseFloat($("#price").val().replace(/[^0-9.]/gi, ',')).toFixed(2);
+        let price = parseFloat($("#price").val().replace(/[^0-9.]/gi, '.')).toFixed(2);
         let formData = new FormData();
         let files = $('#cover')[0].files;
         if (title.length > 1) {

@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3705c003-8ff2-443e-9a69-edc5f34c7954" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/tesTTest436.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myRentedBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myRentedBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/viewBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/viewBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/addUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/connectUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/connectUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/userProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/addBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/addBook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +51,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\ressources\userPictures" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\ressources\bookPictures" />
       <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\Management" />
       <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\Pages" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\ressources\userPictures" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -103,6 +100,7 @@
       <workItem from="1606403396962" duration="8017000" />
       <workItem from="1607021889237" duration="245000" />
       <workItem from="1607024460905" duration="1484000" />
+      <workItem from="1607131364900" duration="1140000" />
     </task>
     <servers />
   </component>
