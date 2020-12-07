@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3705c003-8ff2-443e-9a69-edc5f34c7954" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/tesTTest436.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/addBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/addBook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/deleteBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/deleteBook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,6 +100,8 @@
       <workItem from="1607021889237" duration="245000" />
       <workItem from="1607024460905" duration="1484000" />
       <workItem from="1607131364900" duration="1140000" />
+      <workItem from="1607285326013" duration="592000" />
+      <workItem from="1607360638425" duration="1922000" />
     </task>
     <servers />
   </component>

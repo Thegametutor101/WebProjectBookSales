@@ -164,7 +164,7 @@ function addBook() {
         let author = $("#author").val().replace(regex, '');
         let category = $("#category").val().replace(regex, ',');
         let description = $("#description").val().replace(regex, '');
-        let price = parseFloat($("#price").val().replace(/[^0-9.]/gi, '.')).toFixed(2);
+        let price = Math.abs(parseFloat($("#price").val().replace(/[^0-9.]/gi, '.')).toFixed(2));
         let formData = new FormData();
         let files = $('#cover')[0].files;
         if (title.length > 1) {
@@ -411,8 +411,7 @@ function updateBook() {
                 },
                 dataType: "json",
                 success:function (result) {
-                    window.location.href = baseUrl + "/Pages/UserPages/userProfile.html?isLoggedIn=" + getUrlParameter('isLoggedIn');
-                    location.reload();
+                    window.location.href = baseUrl + "/Pages/index.html?isLoggedIn=" + getUrlParameter('isLoggedIn');
                 },
                 error:function (message, er) {
                     console.log("error deleting book: " + message);
