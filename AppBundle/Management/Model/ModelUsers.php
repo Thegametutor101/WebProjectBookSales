@@ -35,11 +35,11 @@ class ModelUsers
         }
     }
 
-    function updateUserWithPassord($id, $email, $phone, $password, $adress):bool
+    function updateUserWithPassord($id, $firstName, $lastName, $email, $phone, $password, $adress):bool
     {
         try
         {
-            $requete = "UPDATE user SET email='$email', phone='$phone', password='$password', adress='$adress' WHERE id='$id'";
+            $requete = "UPDATE user SET firstName='$firstName', lastName='$lastName', email='$email', phone='$phone', password='$password', adress='$adress' WHERE id='$id'";
             $this->connexion->exec($requete);
 
             return true;
@@ -49,11 +49,11 @@ class ModelUsers
         }
     }
 
-    function updateUser($id, $email, $phone, $adress):bool
+    function updateUser($id, $firstName, $lastName, $email, $phone, $adress):bool
     {
         try
         {
-            $requete = "UPDATE user SET email='$email', phone='$phone', adress='$adress' WHERE id='$id'";
+            $requete = "UPDATE user SET firstName='$firstName', lastName='$lastName', email='$email', phone='$phone', adress='$adress' WHERE id='$id'";
             $this->connexion->exec($requete);
 
             return true;

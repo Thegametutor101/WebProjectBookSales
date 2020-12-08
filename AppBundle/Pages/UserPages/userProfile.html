@@ -28,8 +28,8 @@
                 <div class="content"><br><br>
                     <div class="informationBox">
                         <div>
-                            <label class="info" id="lastName"></label>
-                            <label class="info" id="firstName"></label>
+                            <input class="inputs name" id="firstName" type="text" name="firstName" placeholder="Prénom">
+                            <input class="inputs name" id="lastName" type="text" name="lastName" placeholder="Nom de famille">
                             <span id="token" style="display: none"></span>
                         </div>
                         <input class="inputs" id="email" type="text" name="email">
@@ -115,6 +115,12 @@
         outline: none;
         border: 2px solid #d9b85f;
         color: white;
+    }
+    .name {
+        width: 47%;
+    }
+    .name:focus {
+        width: 45%;
     }
     .profileNav {
         display: flex;

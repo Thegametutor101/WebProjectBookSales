@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="3705c003-8ff2-443e-9a69-edc5f34c7954" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/deleteBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/deleteBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Model/ModelUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Model/ModelUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/updateUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/updateUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myRentedBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myRentedBook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/viewBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/viewBook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/addUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/addUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/userProfile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,6 +108,8 @@
       <workItem from="1607131364900" duration="1140000" />
       <workItem from="1607285326013" duration="592000" />
       <workItem from="1607360638425" duration="1922000" />
+      <workItem from="1607366864948" duration="1211000" />
+      <workItem from="1607434588623" duration="4227000" />
     </task>
     <servers />
   </component>

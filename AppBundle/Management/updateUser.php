@@ -8,18 +8,15 @@ $lastName=trim($_POST['lastName'],"\"");
 $email=trim($_POST['email'],"\"");
 $phone=trim($_POST['phone'],"\"");
 $password=trim($_POST['password'],"\"");
-$adress;
+$adress="3175 Boulevard Laviolette, Trois-Rivières, Quebec G8Z 1E9";
 
-if(!isset($_POST['adress'])){
-    $adress="3175 Boulevard Laviolette, Trois-Rivières, Quebec G8Z 1E9";
-}
-else{
+if(isset($_POST['adress'])){
     $adress=trim($_POST['adress'],"\"");
 }
 
 
 if (isset($_POST['password'])) {
-    if ($modelUsers->updateUserWithPassord($id, $email, $phone, $password,$adress)) {
+    if ($modelUsers->updateUserWithPassord($id, $firstName, $lastName, $email, $phone, $password, $adress)) {
         if (isset($_POST['mobile'])) {
             echo json_encode("ok");
         } else {
@@ -33,7 +30,7 @@ if (isset($_POST['password'])) {
         }
     }
 } else {
-    if ($modelUsers->updateUser($id, $email, $phone,$adress)) {
+    if ($modelUsers->updateUser($id, $firstName, $lastName, $email, $phone, $adress)) {
         if (isset($_POST['mobile'])) {
             echo json_encode("ok");
         } else {

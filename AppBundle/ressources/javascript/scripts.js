@@ -91,7 +91,7 @@ function addUser() {
             "password": password
         }
         if (phone.match(/(?:\(\d{3}\)|\d{3})[ ]?\d{3}[- ]?\d{4}/g)) {
-            if (isNaN(password) || isNaN(passwordConfirm)) {
+            if (!isNaN(password) || !isNaN(passwordConfirm)) {
                 if (password === passwordConfirm) {
                     $.ajax({
                         url: "../../Management/addUser.php",
@@ -250,8 +250,8 @@ function getInfo() {
         dataType: "json",
         success:function (result) {
             let user = result['user'][0];
-            $("#firstName").text(user[1]);
-            $("#lastName").text(user[2] + ", ");
+            $("#firstName").val(user[1]);
+            $("#lastName").val(user[2]);
             $("#email").val(user[3]);
             $("#phone").val(user[4]);
             $("#token").text(user[5]);
@@ -521,21 +521,61 @@ function userProfileInfo() {
         }
     });
     $(".submitButton").click(function () {
+        let firstName = $("#firstName").val();
+        let lastName = $("#lastName").val();
         let email = $("#email").val();
         let phone = $("#phone").val();
         let newPassword = $("#newPassword").val();
         let newPasswordConfirm = $("#newPasswordConfirm").val();
-        if (phone.match(/(?:\(\d{3}\)|\d{3})[ ]?\d{3}[- ]?\d{4}/g)) {
-            if (isNaN(newPassword) && isNaN(newPasswordConfirm)) {
-                if (newPassword === newPasswordConfirm) {
+        if (isNaN(firstName) && isNaN(lastName)) {
+            if (phone.match(/(?:\(\d{3}\)|\d{3})[ ]?\d{3}[- ]?\d{4}/g)) {
+                if (!isNaN(newPassword) || !isNaN(newPasswordConfirm)) {
+                    if (newPassword === newPasswordConfirm) {
+                        let password = prompt("Veuillez entrer votre mot de passe");
+                        if (!(password == null) && !(password === "")) {
+                            if (password === $("#token").text()) {
+                                let values = {
+                                    "id": getUrlParameter("isLoggedIn"),
+                                    "firstName": firstName,
+                                    "lastName": lastName,
+                                    "email": email,
+                                    "phone": phone,
+                                    "password": newPassword
+                                }
+                                $.ajax({
+                                    url: "../../Management/updateUser.php",
+                                    type: "POST",
+                                    data: values,
+                                    dataType: "json",
+                                    success:function (result) {
+                                        if (result['message'] === "ok") {
+                                            alert("Vos informations ont été mis à jour.");
+                                            getInfo();
+                                        } else if (result['message'] === "no") {
+                                            $(".messages").empty();
+                                            $(".messages").append("<div>erreur l'ors de la mise a jour.<br>Veuillez réessayer plus tard.</div><br><hr>");
+                                        }
+                                    },
+                                    error:function (message, er) {
+                                        console.log("error during update: " + message);
+                                    }
+                                });
+                            }
+                        }
+                    } else {
+                        $(".messages").empty();
+                        $(".messages").append("<div>Les nouveaux mots de passes ne correspondent pas.</div><br><hr>");
+                    }
+                } else {
                     let password = prompt("Veuillez entrer votre mot de passe");
                     if (!(password == null) && !(password === "")) {
                         if (password === $("#token").text()) {
                             let values = {
                                 "id": getUrlParameter("isLoggedIn"),
+                                "firstName": firstName,
+                                "lastName": lastName,
                                 "email": email,
-                                "phone": phone,
-                                "password": newPassword
+                                "phone": phone
                             }
                             $.ajax({
                                 url: "../../Management/updateUser.php",
@@ -544,11 +584,10 @@ function userProfileInfo() {
                                 dataType: "json",
                                 success:function (result) {
                                     if (result['message'] === "ok") {
-                                        alert("Vos informations ont été mis à jour.");
                                         getInfo();
                                     } else if (result['message'] === "no") {
                                         $(".messages").empty();
-                                        $(".messages").append("<div>erreur l'ors de la mise a jour.<br>Veuillez réessayer plus tard.</div><br><hr>");
+                                        $(".messages").append("<div>erreur lors de la mise a jour.<br>Veuillez réessayer plus tard.</div><br><hr>");
                                     }
                                 },
                                 error:function (message, er) {
@@ -559,34 +598,12 @@ function userProfileInfo() {
                     }
                 }
             } else {
-                let password = prompt("Veuillez entrer votre mot de passe");
-                if (!(password == null) && !(password === "")) {
-                    if (password === $("#token").text()) {
-                        let values = {
-                            "id": getUrlParameter("isLoggedIn"),
-                            "email": email,
-                            "phone": phone
-                        }
-                        $.ajax({
-                            url: "../../Management/updateUser.php",
-                            type: "POST",
-                            data: values,
-                            dataType: "json",
-                            success:function (result) {
-                                if (result['message'] === "ok") {
-                                    getInfo();
-                                } else if (result['message'] === "no") {
-                                    $(".messages").empty();
-                                    $(".messages").append("<div>erreur l'ors de la mise a jour.<br>Veuillez réessayer plus tard.</div><br><hr>");
-                                }
-                            },
-                            error:function (message, er) {
-                                console.log("error during update: " + message);
-                            }
-                        });
-                    }
-                }
+                $(".messages").empty();
+                $(".messages").append("<div>Veuillez entrer un téléphone valide</div><br><hr>");
             }
+        } else {
+            $(".messages").empty();
+            $(".messages").append("<div>Votre nom ne peut etre vide.</div><br><hr>");
         }
         $("#newPasswordConfirm").val("");
         $("#newPassword").val("");
