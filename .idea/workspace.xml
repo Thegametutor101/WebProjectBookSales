@@ -2,80 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3705c003-8ff2-443e-9a69-edc5f34c7954" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/AppBundle/Management/getUserWithBook.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityUsers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Model/ModelBooks.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Model/ModelUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Model/ModelUsers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/ProjectConstants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/addBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/addBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/addUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/addUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/updateBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/updateBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Management/updateProfilePicture.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/updateProfilePicture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/addBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myRentedBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/myRentedBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/BookPages/viewBook.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/BookPages/viewBook.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/UserPages/userProfile.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/UserPages/userProfile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/Pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/FabBMull120.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/FabBMull553.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/FabBMull664.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/MidSMeyer038.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/MidSMeyer174.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/MidSMeyer709.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/MidSMeyer825.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/MidSMeyer893.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/Si CMarch173.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard114.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard175.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard197.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard242.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard277.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard313.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard406.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard437.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard473.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard582.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard608.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard652.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard654.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard672.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard694.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard707.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard709.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard719.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard734.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard737.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard834.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard848.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard852.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard894.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard896.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard939.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/WarVAveyard960.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/gggGGggggggggggggggggggggggggg451.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/gggGGggggggggggggggggggggggggg967.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/hhhHHhh809.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/midSMeyer365.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/midSMeyer554.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/midSMeyer971.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/tesTTest032.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/tesTTest436.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/tesTTest541.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/tesTTest545.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/tesTTest609.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/tesTTest766.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/bookPictures/tesTTest788.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/userPictures/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/userPictures/17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/userPictures/18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/userPictures/19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/userPictures/20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/userPictures/21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/userPictures/22.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,13 +48,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\Management" />
+      <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\ressources\bookPictures" />
+      <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\Pages" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\ressources\userPictures" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\ressources\bookPictures" />
-      <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\Management" />
-      <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\Pages" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -176,7 +104,8 @@
       <workItem from="1607434588623" duration="4227000" />
       <workItem from="1607547694040" duration="31000" />
       <workItem from="1607703071173" duration="751000" />
-      <workItem from="1607706197250" duration="4144000" />
+      <workItem from="1607706197250" duration="5428000" />
+      <workItem from="1607713949575" duration="1495000" />
     </task>
     <servers />
   </component>

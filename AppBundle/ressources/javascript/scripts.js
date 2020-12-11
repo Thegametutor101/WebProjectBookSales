@@ -242,7 +242,7 @@ function addBook() {
 }
 function getInfo() {
     $.ajax({
-        url: "../../Management/getUser.php",
+        url: baseUrl + "/Management/getUser.php",
         type: "POST",
         data: {
             "id": getUrlParameter('isLoggedIn')
@@ -250,8 +250,8 @@ function getInfo() {
         dataType: "json",
         success:function (result) {
             let user = result['user'][0];
-            $(".profilePicture").attr("src", "../../ressources/userPictures/" + getUrlParameter('isLoggedIn') + "." + user[7]);
-            $("#profilePicture").attr("src", "../../ressources/userPictures/" + getUrlParameter('isLoggedIn') + "." + user[7]);
+            $(".profilePicture").find("img").attr("src", baseUrl + "/ressources/userPictures/" + getUrlParameter('isLoggedIn') + "." + user[7]);
+            $("#profilePicture").attr("src", baseUrl + "/ressources/userPictures/" + getUrlParameter('isLoggedIn') + "." + user[7]);
             $("#firstName").val(user[1]);
             $("#lastName").val(user[2]);
             $("#email").val(user[3]);
@@ -530,9 +530,9 @@ function userProfileInfo() {
         let phone = $("#phone").val();
         let newPassword = $("#newPassword").val();
         let newPasswordConfirm = $("#newPasswordConfirm").val();
-        if (isNaN(firstName) && isNaN(lastName)) {
+        if (firstName && lastName) {
             if (phone.match(/(?:\(\d{3}\)|\d{3})[ ]?\d{3}[- ]?\d{4}/g)) {
-                if (!isNaN(newPassword) || !isNaN(newPasswordConfirm)) {
+                if (newPassword && newPasswordConfirm) {
                     if (newPassword === newPasswordConfirm) {
                         let password = prompt("Veuillez entrer votre mot de passe");
                         if (!(password == null) && !(password === "")) {
