@@ -20,8 +20,8 @@ class ModelUsers
             if ($entityUsers->checkEmailUsed($email)) {
                 return false;
             } else {
-                $requete = "INSERT INTO user (firstName, lastName, email, phone, password, adress) 
-                        VALUES('$firstName', '$lastName', '$email', '$phone', '$password',' $adress')";
+                $requete = "INSERT INTO user (firstName, lastName, email, phone, password, adress, ext) 
+                        VALUES('$firstName', '$lastName', '$email', '$phone', '$password',' $adress', 'png')";
                 $this->connexion->exec($requete);
                 $id = $entityUsers->getUserId($email);
                 $file = dirname(__FILE__) . '/../../ressources/userPictures/defaultUserProfile.png';
@@ -54,6 +54,20 @@ class ModelUsers
         try
         {
             $requete = "UPDATE user SET firstName='$firstName', lastName='$lastName', email='$email', phone='$phone', adress='$adress' WHERE id='$id'";
+            $this->connexion->exec($requete);
+
+            return true;
+        }
+        catch(PDOException $e) {
+            return false;
+        }
+    }
+
+    function updateExtension($id, $ext):bool
+    {
+        try
+        {
+            $requete = "UPDATE user SET ext='$ext' WHERE id='$id'";
             $this->connexion->exec($requete);
 
             return true;

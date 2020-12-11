@@ -1,6 +1,6 @@
 let getUrl = window.location;
-// let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1] + "/" + getUrl.pathname.split('/')[2] + "/" + getUrl.pathname.split('/')[3] + "/" + getUrl.pathname.split('/')[4];
-let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1] + "/" + getUrl.pathname.split('/')[2];
+let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1] + "/" + getUrl.pathname.split('/')[2] + "/" + getUrl.pathname.split('/')[3] + "/" + getUrl.pathname.split('/')[4];
+// let baseUrl = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1] + "/" + getUrl.pathname.split('/')[2];
 
 
 let getUrlParameter = function getUrlParameter(sParam) {
@@ -205,7 +205,7 @@ function addBook() {
                                         }
                                     },
                                     error: function (message, er) {
-                                        console.log("downloading book list: " + message);
+                                        console.log("upload error: " + message);
                                     }
                                 });
                             } else {
@@ -250,6 +250,8 @@ function getInfo() {
         dataType: "json",
         success:function (result) {
             let user = result['user'][0];
+            $(".profilePicture").attr("src", "../../ressources/userPictures/" + getUrlParameter('isLoggedIn') + "." + user[7]);
+            $("#profilePicture").attr("src", "../../ressources/userPictures/" + getUrlParameter('isLoggedIn') + "." + user[7]);
             $("#firstName").val(user[1]);
             $("#lastName").val(user[2]);
             $("#email").val(user[3]);
@@ -430,6 +432,7 @@ function loadMyBook() {
         dataType: "json",
         success: function (result) {
             let book = result['book'][0];
+            $('#bookCover').attr("src", "../../ressources/bookPictures/" + getUrlParameter('id') + "." + book[8]);
             $("#title").val(book[1]);
             $("#author").val(book[2]);
             $("#category").val(book[3]);
@@ -712,7 +715,7 @@ function printCards(list) {
         if (list[i][5] === "1") {
             $(".bookList").append(
                 "<div class='card'>" +
-                "<img src='../ressources/bookPictures/" + list[i][0] + ".png' class='bookPicture' alt='" + list[i][1] + "'>" +
+                "<img src='../ressources/bookPictures/" + list[i][0] + "." + list[i][8] + "' class='bookPicture' alt='" + list[i][1] + "'>" +
                 "<div class='id' style=';vertical-align: top;display: none'>" + list[i][0] + "</div>" +
                 "<div class='title' style=';vertical-align: top;display: none'>" + list[i][1] + "</div>" +
                 "<div class='author' style=';vertical-align: top;display: none'>" + list[i][2] + "</div>" +

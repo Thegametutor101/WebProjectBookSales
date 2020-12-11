@@ -11,7 +11,7 @@ $lastName=trim($_POST['lastName'],"\"");
 $email=trim($_POST['email'],"\"");
 $phone=trim($_POST['phone'],"\"");
 $password=trim($_POST['password'],"\"");
-$adress;
+$adress = "";
 
 if(!isset($_POST['adress'])){
     $adress="3175 Boulevard Laviolette, Trois-Rivières, Quebec G8Z 1E9";

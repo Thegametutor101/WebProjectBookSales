@@ -11,18 +11,23 @@ class ModelBooks
         $this->connexion = $constants->getConnexion();
     }
 
-   function addBook($id, $title, $author, $category, $description, $available, $price, $fileTemp, $owner): string
+   function addBook($id, $title, $author, $category, $description, $available, $price, $fileTemp, $owner, $ext): string
    {
        try 
        {
-            $coverDirectory="\\\\TECHINFOTR.QC.CA\\PARTAGES\\FTP\\Cours\\A2020\\420505RI\\Equipe_6\\AppBundle\\ressources\\bookPictures\\".$id. '.png';
-//           $coverDirectory = dirname(__FILE__) . '../../ressources/bookPictures/'. $id . '.png';
+           $coverDirectory="\\\\TECHINFOTR.QC.CA\\PARTAGES\\FTP\\Cours\\A2020\\420505RI\\Equipe_6\\AppBundle\\ressources\\bookPictures\\".$id. '.' . $ext;
            if (!move_uploaded_file($fileTemp, $coverDirectory)) {
                return "file error";
            } else {
-               $request = "INSERT INTO book VALUES('$id', '$title', '$author', '$category',
-                        '$description', $available, $price, $owner)";
-               $this->connexion->exec($request);
+               $request = "INSERT INTO book VALUES('$id', :title, :author, :category, :description, $available, $price, $owner, '$ext')";
+
+               $declaration= $this->connexion->prepare($request);
+               $declaration->bindParam(':title', $title);
+               $declaration->bindParam(':author', $author);
+               $declaration->bindParam(':category', $category);
+               $declaration->bindParam(':description', $description);
+
+               $declaration->execute();
                return "ok";
            }
        }
@@ -36,9 +41,16 @@ class ModelBooks
        try
        {
             trim($id,"\"");
-           $request = "UPDATE book SET title='$title', author='$author', category='$category',
-                    description='$description', available='$available', price='$price', owner='$owner' WHERE id='$id'";
-           $this->connexion->exec($request);
+           $request = "UPDATE book SET title=:title, author=:author, category=:category,
+                    description=:description, available='$available', price='$price', owner='$owner' WHERE id='$id'";
+
+           $declaration= $this->connexion->prepare($request);
+           $declaration->bindParam(':title', $title);
+           $declaration->bindParam(':author', $author);
+           $declaration->bindParam(':category', $category);
+           $declaration->bindParam(':description', $description);
+
+           $declaration->execute();
            return "ok";
        }
        catch(PDOException $e) {
@@ -46,18 +58,25 @@ class ModelBooks
        }
    }
 
-   function updateBookWithCover($id, $title, $author, $category, $description, $available, $price, $fileTemp, $owner): string
+   function updateBookWithCover($id, $title, $author, $category, $description, $available, $price, $fileTemp, $owner, $ext): string
    {
        try
        {
         trim($id,"\"");
-        $coverDirectory="\\\\TECHINFOTR.QC.CA\\PARTAGES\\FTP\\Cours\\A2020\\420505RI\\Equipe_6\\AppBundle\\ressources\\bookPictures\\".$id. '.png';
+           $coverDirectory="\\\\TECHINFOTR.QC.CA\\PARTAGES\\FTP\\Cours\\A2020\\420505RI\\Equipe_6\\AppBundle\\ressources\\bookPictures\\".$id. '.' . $ext;
            if (!move_uploaded_file($fileTemp, $coverDirectory)) {
                return "file error";
            } else {
-               $request = "UPDATE book SET title='$title', author='$author', category='$category',
-                        description='$description', available='$available', price='$price', owner='$owner' WHERE id='$id'";
-               $this->connexion->exec($request);
+               $request = "UPDATE book SET title=:title, author=:author, category=:category,
+                    description=:description, available='$available', price='$price', owner='$owner', ext='$ext' WHERE id='$id'";
+
+               $declaration= $this->connexion->prepare($request);
+               $declaration->bindParam(':title', $title);
+               $declaration->bindParam(':author', $author);
+               $declaration->bindParam(':category', $category);
+               $declaration->bindParam(':description', $description);
+
+               $declaration->execute();
                return "ok";
            }
        }

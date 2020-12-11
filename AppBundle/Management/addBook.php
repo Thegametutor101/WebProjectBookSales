@@ -11,6 +11,9 @@ $available = trim($_POST["available"],"\"");
 $price = trim($_POST["price"],"\"");
 $owner = trim($_POST["owner"],"\"");
 
+$path = $_FILES['cover']['name'];
+$ext = pathinfo($path, PATHINFO_EXTENSION);
+
 $authorWords = explode(' ', ucwords($author));
 $id = substr($title, 0, 3) .
     substr($authorWords[0], 0, 1) .
@@ -20,9 +23,8 @@ $id = substr($title, 0, 3) .
 
 if(isset($_POST["mobile"])) {
     echo json_encode($modelBook->addBook(
-    $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner));
+    $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner, $ext));
 } else {
-    echo json_encode("ok");
     echo json_encode(array("message" => $modelBook->addBook(
-    $id, $title, $author, $category, $description, $available, $price, $_FILES["cover"]["tmp_name"], $owner)));
+    $id, $title, $author, $category, $description, $available, $price, $_FILES["cover"]["tmp_name"], $owner, $ext)));
 }

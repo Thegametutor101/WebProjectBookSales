@@ -80,10 +80,9 @@
             $(".header").html(body);
             $(".pageName").css("display", "none");
             $(".searchBar").css("visibility", "hidden");
-            $(".profilePicture").find("img").attr("src","../../ressources/userPictures/" + getUrlParameter('isLoggedIn') + ".png");
+            getInfo();
             headerListener();
         });
-        $('#bookCover').attr("src", "../../ressources/bookPictures/" + getUrlParameter('id') + ".png");
         $.ajax({
             url: "../../Management/getBook.php",
             type: "POST",
@@ -94,6 +93,7 @@
             success: function(result){
                 console.log(result)
                 let book = result['book'][0];
+                $('#bookCover').attr("src", "../../ressources/bookPictures/" + getUrlParameter('id') + "." + book[8]);
                 $("#title").html("<strong style='font-size: 20px'>Titre: </strong>" + book[1])
                 $("#author").html("<strong style='font-size: 20px'>Auteur: </strong>" + book[2])
                 $("#category").html("<strong style='font-size: 20px'>Catégories: </strong>" + book[3])

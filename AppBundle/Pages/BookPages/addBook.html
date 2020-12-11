@@ -130,7 +130,7 @@ $(document).ready(function () {
         $(".pageName").text("Nouveau Livre");
         $(".searchBar").css("visibility", "hidden");
         $(".addButton").css("display", "none");
-        $(".profilePicture").find("img").attr("src","../../ressources/userPictures/" + getUrlParameter('isLoggedIn') + ".png");
+        getInfo();
         headerListener();
     });
     addBook();

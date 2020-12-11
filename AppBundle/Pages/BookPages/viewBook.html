@@ -91,7 +91,7 @@
             $(".header").html(body);
             $(".pageName").text(getUrlParameter('title'));
             $(".searchBar").css("display", "none");
-            $(".profilePicture").find("img").attr("src","../../ressources/userPictures/" + getUrlParameter('isLoggedIn') + ".png");
+            getInfo();
             if (isNaN(getUrlParameter('isLoggedIn'))) {
                 $(".addButton").css("display", "none");
                 $(".profilePicture").find("img").attr("src","../../ressources/userPictures/defaultUserProfile.png");
@@ -99,7 +99,6 @@
             headerListener();
         });
         $('#BookId').text(getUrlParameter('id'));
-        $('#bookCover').attr("src", "../../ressources/bookPictures/" + getUrlParameter('id') + ".png");
         $('Title').text(getUrlParameter('title'));
         $.ajax({
             url: "../../Management/getBook.php",
@@ -110,6 +109,7 @@
             dataType: "json",
             success: function(result){
                 let book = result['book'][0];
+                $('#bookCover').attr("src", "../../ressources/bookPictures/" + getUrlParameter('id') + "." + book[8]);
                 $("#title").html("<strong style='font-size: 20px'>Titre: </strong>" + book[1])
                 $("#author").html("<strong style='font-size: 20px'>Auteur: </strong>" + book[2])
                 $("#category").html("<strong style='font-size: 20px'>Catégories: </strong>" + book[3])

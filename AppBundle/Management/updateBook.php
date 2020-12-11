@@ -14,6 +14,8 @@ $owner = trim($_POST["owner"],"\"");
 $authorWords = explode(' ', ucwords($author));
 $id = trim($_POST['id'],"\"");
 
+$path = $_FILES['cover']['name'];
+$ext = pathinfo($path, PATHINFO_EXTENSION);
 
 if (!isset($_FILES['cover'])) {
     if (isset($_POST['mobile']))
@@ -30,10 +32,10 @@ if (!isset($_FILES['cover'])) {
     if (isset($_POST['mobile']))
     {
         echo json_encode($modelBook->updateBookWithCover(
-        $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner));
+        $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner, $ext));
     }
     else{
         echo json_encode(array("message" => $modelBook->updateBookWithCover(
-        $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner)));
+        $id, $title, $author, $category, $description, $available, $price, $_FILES['cover']['tmp_name'], $owner, $ext)));
     }
 }

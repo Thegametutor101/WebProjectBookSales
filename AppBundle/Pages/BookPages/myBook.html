@@ -150,10 +150,9 @@
             $(".header").html(body);
             $(".pageName").css("display", "none");
             $(".searchBar").css("visibility", "hidden");
-            $(".profilePicture").find("img").attr("src","../../ressources/userPictures/" + getUrlParameter('isLoggedIn') + ".png");
+            getInfo();
             headerListener();
         });
-        $('#bookCover').attr("src", "../../ressources/bookPictures/" + getUrlParameter('id') + ".png");
         loadMyBook();
         updateBook();
         $(".resetButton").click(function (e) {
