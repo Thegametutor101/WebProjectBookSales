@@ -8,7 +8,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         if ($result) {
             $loggedUser = $entityUsers->setNameCookie($_POST['email']);
             if (isset($_POST['mobile'])) {
-                echo json_encode($loggedUser[0]);
+                $user=$entityUsers->getUserByID($loggedUser[0]);
+                echo json_encode($user[0]);
             } else {
                 echo json_encode(array("message" => "ok", "loggedUser" => $loggedUser));
             }

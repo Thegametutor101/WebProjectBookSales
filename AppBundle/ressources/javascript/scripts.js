@@ -116,7 +116,7 @@ function addUser() {
                 }
             } else {
                 $(".messages").empty();
-                $(".messages").append("<div>Veuillez entrer et confirmer votre mot de passe.</div><br><hr>");
+                $(".messages").append("<div>Le mot de passe doit contenir des lettres.</div><br><hr>");
             }
         } else {
             $(".messages").empty();
