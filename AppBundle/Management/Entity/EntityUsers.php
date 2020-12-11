@@ -105,18 +105,4 @@ class EntityUsers
             return 0;
         }
     }
-
-    function getUserWithBook():array{
-        $lines = array();
-        try {
-            $request = "SELECT DISTINCT u.id,u.firstName,u.lastName,u.email,u.phone,u.password,u.adress FROM user u INNER JOIN book b ON b.owner=u.id WHERE b.available=1";
-            $result = $this->connexion->query($request);
-            $lines = $result->fetchAll();
-
-            return $lines;
-        }
-        catch(PDOException $e) {
-            return $lines;
-        }
-    }
 }

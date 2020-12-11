@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3705c003-8ff2-443e-9a69-edc5f34c7954" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/AppBundle/ressources/picture/back.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AppBundle/ressources/picture/back1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/javascript/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/Management/Entity/EntityUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/AppBundle/ressources/css/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppBundle/ressources/javascript/defaultUserProfile.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,13 +54,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\ressources\userPictures" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\ressources\picture" />
       <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\Management" />
       <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\ressources\bookPictures" />
       <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\Pages" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\WebProjectBookSales\AppBundle\ressources\userPictures" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -106,6 +113,8 @@
       <workItem from="1607703071173" duration="751000" />
       <workItem from="1607706197250" duration="5428000" />
       <workItem from="1607713949575" duration="1495000" />
+      <workItem from="1607723334315" duration="346000" />
+      <workItem from="1607723748348" duration="1138000" />
     </task>
     <servers />
   </component>
@@ -120,10 +129,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="194" y="254" key="#SQL_Dialects/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1603740173778" />
-    <state x="206" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603999953856">
+    <state x="206" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607723647234">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="206" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1603999953856" />
+    <state x="206" y="73" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/460.1080.1000.504@0.0.1536.824" timestamp="1607723647234" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1603905008844">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
